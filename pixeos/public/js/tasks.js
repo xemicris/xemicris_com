@@ -46,6 +46,10 @@ let headerCrearEditar = document.getElementById('encabezadoCrearEditar');
 let headerMostrar = document.getElementById('encabezadoMostrar');
 let opcion = '';
 
+(function () {
+    mostrarTareas();
+})();
+
 /**
  * Función que permite detectar que botón se ha presionado tanto para editar como para borrar
  * @param {object} element 
@@ -151,8 +155,6 @@ async function mostrarTareas(todasTareas = '') {
         }
     }
 };
-
-mostrarTareas();
 
 
 //lanzar modal
@@ -267,9 +269,7 @@ on(document, 'click', [ '.btn-mostrar' ], async (e) => {
 
             }
         })
-
     }
-
     //mostrar modal
     modalTareaMostrar.show();
 })

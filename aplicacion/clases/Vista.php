@@ -13,7 +13,6 @@ class Vista{
         if(!is_file(VISTAS.CONTROLADOR.SD.$nombreVista.'Vista.php')){
            die(sprintf('No existe la vista %s en la carpeta %s', $nombreVista, CONTROLADOR));
         }else{
-            $hola = VISTAS.CONTROLADOR.SD.$nombreVista.'Vista.php';
             require_once VISTAS.CONTROLADOR.SD.$nombreVista.'Vista.php';
             exit();
         }

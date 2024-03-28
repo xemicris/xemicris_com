@@ -27,8 +27,8 @@
                 $url = encabezado(($urlActual));
                 if ($url == 'panel') {
             ?>
-                <script type="module" src="<?php echo RUTA ?>js/notas.js"></script> 
-                <script type="module" src="<?php echo RUTA ?>js/buscar.js"></script> 
+                <script type="module" src="<?php echo RUTA ?>js/notes.js"></script> 
+                <script type="module" src="<?php echo RUTA ?>js/searchNotes.js"></script> 
 
             <?php }else if($url == 'profile'){ ?>
 
@@ -41,7 +41,7 @@
             <?php }else if($url == 'viewStatistics'){ ?>
 
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-                <script type="module" src="<?php echo RUTA ?>js/estadisticas.js"></script>  
+                <script type="module" src="<?php echo RUTA ?>js/statistics.js"></script>  
 
             <?php }else if($url == 'admin'){ ?>
 
