@@ -1,0 +1,233 @@
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+    margin:0;
+    padding: 0;
+}
+
+body{
+    min-height:100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    /* transición del fondo */
+    background-image: linear-gradient(to top, rgb(211, 206, 206) 0%, rgb(255, 255, 255) 100%);
+}
+
+main{
+    min-height: calc(100vh - 450px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+/* cabecera */
+#imagen_principal{
+    background-image: url(../imagenes/libreria/principal.jpg); /*imágen de fondo*/
+    background-repeat: no-repeat; /*no repita la imagen*/
+    background-size: cover; /*llena el ancho disponible*/
+    height: 18rem; /*altura*/
+    /*pongo relativo para que el hijo se pueda poner como absoluto y 
+    tome como referencia al padre para colocarse. Sino cogería todo el documento*/
+    position: relative;
+    
+}
+#contenido_imagen_principal{
+    position: absolute;
+    -ms-background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.6);/*sintaxis para sombreado nueva*/
+    width: 100%;  /*ancho*/
+    height: 100%;
+    display: flex; /*habilita flexbox en en menú de navegación*/
+    align-items: center; /*centrado vertical*/
+    justify-content: center; /*centrado horizontal*/
+}
+a{
+    color:#0000cd;
+    text-decoration: none;
+}
+a:hover{
+    color:red;
+}
+#contenido_imagen_principal a{
+    color: white;
+}
+.casa__contenedor{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ 
+}
+.casa{
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(180deg, #4e3424c3, #4e3424);
+    box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15),
+    inset 0 -8px 8px rgba(0, 0, 0, 0.25),
+    0 0 0 2px rgba(0,0,0,0.75),
+    10px 20px 25px rgba(0, 0, 0, 0.4);
+    color:#fff;
+    user-select: none;
+    cursor: pointer;
+    font-weight: 400;
+    border-radius: 0 0 10px 10px;
+    padding:5px;
+}
+.casa:hover{
+    color:#cfe10b;
+}
+.bloque__busqueda{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#busqueda{
+    display: flex;
+    gap:8rem;
+    margin-bottom: .5rem;
+}
+.buscador{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+input{
+    height: 30px;
+    font-size: 18px;
+    border-radius: .8rem;
+    outline:none;
+    padding-left: .5rem;
+}
+
+.error{
+    font-size: 80%;
+    color:red;
+}
+.ocultar{
+    display:none !important;
+}
+.mostrar{
+    display: inline;
+}
+#sugerencias{
+    color:rgb(168, 1, 1);
+}
+
+#cuerpo_principal{
+    display: flex;
+    width: 95%;
+    /*efecto sombra del bloque principal*/
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
+     box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
+     background-color: white;
+     padding: 2rem; /*espacio interno*/
+     border-radius: 1rem; /*borde redondeado*/
+     justify-content: center;
+     align-items: center;
+}
+#datos{
+    width: 100%;
+}
+
+#libros{
+    display: grid;
+    grid-template-columns: 100%;
+}
+ul{
+    display: grid;
+    grid-column: 1 / 2;
+    gap:2rem;
+    justify-content: center;
+}
+ul li{
+    list-style: none;
+    font-size: 20px;
+    text-decoration: none;
+}
+hr{
+    margin-top: 4rem;
+}
+#pie{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+}
+
+.volver__libros{
+    margin-left: 1rem;
+}
+/* TABLETA */
+@media (min-width: 780px) { 
+    #contenido_imagen_principal a{
+        font-size: 30px;
+    }
+    ul li{
+        font-size: 30px;
+    }
+    #libros{
+        grid-template-columns: 1fr 2fr 1fr;
+    }
+    ul{
+        grid-column: 2 / 3;
+        justify-content: center;
+    }
+    td{
+        font-size: 20px;
+    }
+    .bloque__busqueda{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #busqueda{
+        flex-direction: column;
+        gap:0;
+        margin-left: 4%;
+    }
+    .buscador{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+        margin-right: 4%;
+    }
+    input{
+        height: 30px;
+        font-size: 25px;
+        border-radius: .8rem;
+    }
+    .noSugerencias{
+        font-size: 1.5rem;
+    }
+    #error_texto{
+        font-size: 1.5rem;
+    }
+}
+/* ESCRITORIO */
+@media (min-width: 1086px) { 
+    #contenido_imagen_principal a{
+        font-size: 40px;
+    }
+    #libros{
+        grid-template-columns: 1fr 2fr 1fr;
+    }
+
+    ul{
+        grid-column: 2 / 3;
+        justify-content: center;
+
+    }
+    ul li{
+        font-size: 40px;
+        
+    }
+    td{
+        font-size: 25px;
+    }
+}

@@ -1,0 +1,27 @@
+<IfDefine DEVELOPMENT>
+    <ifModule mod_rewrite.c>
+        Options -Multiviews
+        RewriteEngine On
+        #ruta a public de nuestro proyecto
+        RewriteBase /xemicris_com/pixeos/public
+        #toma todo lo que sea directorio/archivo
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteCond %{REQUEST_FILENAME} !-f
+        #lo que encuentres(.+) se pone index.php?url=lo envía
+        RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+    </IfModule>
+</IfDefine>
+
+<IfDefine !DEVELOPMENT>
+    <ifModule mod_rewrite.c>
+        Options -Multiviews
+        RewriteEngine On
+        #ruta a public de nuestro proyecto
+        RewriteBase /pixeos/public
+        #toma todo lo que sea directorio/archivo
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteCond %{REQUEST_FILENAME} !-f
+        #lo que encuentres(.+) se pone index.php?url=lo envía
+        RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+    </IfModule>
+</IfDefine>

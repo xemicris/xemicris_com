@@ -1,0 +1,84 @@
+<?php
+/**
+ * función que crea el hash de la contraseña
+ */
+function hashPassword($contrasena){
+    
+}
+
+/**
+ * función que genera un token único
+ * @return string $token con el identificador único generado
+ */
+function createToken(){
+    $token = uniqid();
+    return $token;
+}
+
+/**
+ * Función que genera una URL aleatoria para cada proyecto
+ * @return string $url del proyecto
+ */
+function createUrl(){
+    $url = md5(uniqid());
+    return $url;
+}
+
+/**
+ * función que toma la url y detecta en que pantalla se encuentra el usuario para aplicar funcionalidades determinadas
+ * @return string $url con la pantalla en la que se encuentra el usuario
+ */
+function encabezado(){
+    if(isset($_GET["url"])){
+        /*eliminamos las diagonales (algunos navegadores usan diagonal
+        invertida)*/
+        $url = rtrim($_GET["url"], "/");
+        $url = rtrim($_GET["url"], "\\");
+
+        
+
+        //Limpiar caracteres no permitidos en una URL
+        $url = filter_var($url, FILTER_SANITIZE_URL);
+
+        //Divide un string en varios dentro de un array (separador, string)
+        $url = explode("/", $url);
+
+        if(isset($url[1])){
+            $url = $url[1];
+        }
+        if($_GET["url"] == "panel/contact/"){
+            $url = "contact/";
+        }
+        if($_GET["url"] == "access/registration/"){
+            $url = "registration/";
+        }
+        return $url;
+    }
+}
+
+function debug_to_console($data) {
+    $output = $data;
+    if (is_array($output))
+        $output = implode(',', $output);
+
+    echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+}
+
+function host(){
+    if(isset($_SERVER['HTTP_HOST'])){
+        $host = $_SERVER['HTTP_HOST'];
+        return $host;
+    } 
+}
+
+function fechaMenorIgual($fecha){
+    $hoy = new DateTime();
+    $fechaLimpia = substr($fecha, 1,10);
+    $fechaPasada =  new DateTime($fechaLimpia);
+    if($fechaPasada <= $hoy){
+        return true;
+    }else{
+        return false;
+    }
+
+}

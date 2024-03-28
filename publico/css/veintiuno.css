@@ -1,0 +1,91 @@
+body{
+    height: 100vh;
+    margin:0px;
+    background-image: url(../imagenes/veintiuno/fondo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #2F4F30;
+    color: rgb(241, 249, 17);
+    backdrop-filter: blur(3px);
+}
+
+.titulo{
+    text-align: center;
+    color: white;
+    font-size: 5rem;
+}
+#divBotones{
+    display: flex;
+    gap:1.5rem;
+    justify-content: center;
+}
+.carta{
+    position: relative;
+    width: 150px;
+    left: 100px;
+    margin-left: -75px;
+}
+#jugador-cartas,
+#maquina-cartas{
+    display: flex;
+    justify-content: center;
+    margin-left: -4rem;
+}
+#jugador-cartas{
+    height: 240px;
+}
+
+#maquina-cartas{
+    margin-bottom: 1rem;
+}
+
+.puntuacion__jugador,
+    .puntuacion__maquina{
+        display: flex;
+        justify-content: center;
+    }
+
+.puntuacion__jugador{
+    display: flex;
+    gap: 1rem;
+    margin-top:2rem
+}
+
+.puntuacion__jugador :nth-child(2){
+    font-size: 180%;
+    font-weight: 600; 
+}
+#nombreJugador{
+    margin-right: -.5rem;
+}
+
+/*Móvil*/
+@media (max-width:768px){
+    .titulo{
+        padding-top:15px;
+        font-size: 4rem;
+    }
+    #divBotones{
+        gap:.5rem;
+    }
+    #btnNuevo,
+    #btnPedir,
+    #btnParar{
+        font-size: .8rem;
+    }
+    .puntuacion__jugador :nth-child(2){
+        font-size: 140%;
+        font-weight: 600; 
+        margin-top: -1px;
+    }
+    #jugador-cartas{
+        height: 180px;
+        margin-bottom: 1.3rem;
+    }
+    .carta{
+        width: 120px;
+        height: 190px;
+        margin-left: -75px;
+    }
+}

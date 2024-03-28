@@ -1,0 +1,305 @@
+:root {
+    --color-fondo:rgba(86, 71, 83, 0.512);  
+    --color-primario:rgb(230,89,35);
+    --color-secundario: rgb(255, 197, 5);
+    --fondo-primario: rgb(11,14,30);
+    --fondo-secundario:rgb(19, 85, 121);
+    --puntuacion:#946356;
+}
+@font-face {
+    font-family: fuente;
+    src: url(../fuentes/zekton\ rg.otf);
+}
+
+/*Base*/
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+    margin:0;
+    padding: 0;
+  }
+body{
+    height: 100vh;
+    width: 100%;
+    background: var(--color-fondo);
+    background-image: url(../imagenes/dino/fondo.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(3px);
+}
+.zonaJuego{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.contenedor{
+    width: 90%;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+    /*Degradadoalfondo*/
+    background: linear-gradient(#B7F6C7, #FFE2D1);
+    overflow: hidden;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.5), 
+            0px 2px 4px rgba(0,0,0,0.1),
+            0px 4px 8px rgba(0,0,0,0.1),
+            0px 8px 16px rgba(0,0,0,0.1);
+}
+
+/*Casa*/
+.contenedor_casa{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.casa{
+    color: var(--color-primario);
+    background-color: var(--fondo-primario);
+    width: 30px;
+    height: 30px;
+    padding: .25rem .25rem;
+    border-radius: .25rem;
+    -webkit-border-radius: .25rem;
+    -moz-border-radius: .25rem;
+    -ms-border-radius: .25rem;
+    -o-border-radius: .25rem;
+    box-shadow: 0px 0px 0px 2px rgba(206, 203, 203, 0.5), 
+    0px 2px 4px rgba(0,0,0,0.1),
+    0px 4px 8px rgba(0,0,0,0.1),
+    0px 8px 16px rgba(0,0,0,0.1);
+}
+.casa:hover{
+    background-color: var(--fondo-secundario);
+   color: var(--color-secundario);
+   cursor:pointer;
+}
+
+/*Dino sombrero*/
+.dino{
+    width: 250px;
+    height: 250px;
+    background-image: url(../imagenes/dino/dino.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 250px 249px;
+    z-index: 10;
+    margin-bottom: -75px;
+    
+}
+
+/*Cielo*/
+.nube{
+    width: 92px;
+    height: 26px;
+    position: absolute;
+    bottom: 250px;
+    left: 200px;
+    z-index: 1;
+    background: url(../imagenes/dino/cielo.png);
+}
+
+/*Dinosaurio*/
+.dinosaurio{
+    width: 84px;
+    height: 84px;
+    position: absolute;
+    bottom: 22px;
+    left: 52px;
+    z-index: 2;
+    background: url(../imagenes/dino/dinosaurio.png) repeat-x 0px 0px;
+    background-size: 336px 84px;
+    background-position: 0px;
+    
+}
+.dinosaurio_salto{
+    animation: botar 1500ms normal;
+    -webkit-animation: botar 1500ms normal;
+}
+.patas-arriba-abajo{
+    animation: arriba-abajo 0.25s steps(2) infinite;
+    -webkit-animation: arriba-abajo 0.25s steps(2) infinite;
+}
+.dinosaurio-choque{
+    background-position-x: -252px;
+}
+@keyframes arriba-abajo {
+    from{
+        background-position-x: -84px;
+    }
+    to{
+        background-position-x: -252px;
+    }
+}
+
+@keyframes botar {
+    0% {top:auto; animation-timing-function:ease-in;}
+    30% {top:-250px; animation-timing-function:ease-out;}
+    45% {top:100px; animation-timing-function:ease-in;}
+    60% {top:200px; animation-timing-function:ease-out;}
+    68% {top:150px; animation-timing-function:ease-in;}
+    76% {top:200px; animation-timing-function:ease-out;}
+    80% {top:175px; animation-timing-function:ease-in;}
+    84% {top:200px; animation-timing-function:ease-out;}
+    86% {top:188px; animation-timing-function:ease-in;}
+    88% {top:200px; animation-timing-function:ease-out;}
+    87% {top:194px; animation-timing-function:ease-in;}
+    88% {top:200px; animation-timing-function:ease-out;}
+    100% {top:200px;}
+   }
+
+/*Obstaculos*/
+.cactus_grande{
+    width: 46px;
+    height: 96px;
+    position: absolute;
+    bottom: 16px;
+    left: 600px;
+    z-index: 1;
+    background: url(../imagenes/dino/cactus_grande.png);
+}
+
+.cactus_pequeno{
+    width: 95px;
+    height: 60px;
+    position: absolute;
+    bottom: 16px;
+    left: 200px;
+    z-index: 1;
+    background: url(../imagenes/dino/cactus_pequeno.png);
+}
+
+/*Suelo*/
+.suelo{
+    width: 200%;
+    height: 42px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: url(../imagenes/dino/suelo.png);
+    background-size: 50% 42px;
+}
+
+/*Botones*/
+.botones{
+    display: flex;
+    margin-top: 3rem;
+}
+.arrancar{
+   background-color: rgb(11,14,30);
+   color: rgb(230,89,35);
+   font-size: 1.5rem;
+   border: none;
+   padding: .25rem .5rem;
+   border-radius: .5rem;
+   -webkit-border-radius: .5rem;
+   -moz-border-radius: .5rem;
+   -ms-border-radius: .5rem;
+   -o-border-radius: .5rem;
+   font-family: fuente;
+   box-shadow: 0px 0px 0px 2px rgba(206, 203, 203, 0.5), 
+            0px 2px 4px rgba(0,0,0,0.1),
+            0px 4px 8px rgba(0,0,0,0.1),
+            0px 8px 16px rgba(0,0,0,0.1);
+}
+.arrancar:hover{
+    cursor: pointer;
+}
+.reiniciar{
+   background-color: rgb(19, 85, 121) ;
+   color: rgb(253,192,0,255);
+   font-size: 1.5rem;
+   border: none;
+   padding: .25rem .5rem;
+   border-radius: .5rem;
+   -webkit-border-radius: .5rem;
+   -moz-border-radius: .5rem;
+   -ms-border-radius: .5rem;
+   -o-border-radius: .5rem;
+   font-family: fuente;
+   box-shadow: 0px 0px 0px 2px rgba(206, 203, 203, 0.5), 
+            0px 2px 4px rgba(0,0,0,0.1),
+            0px 4px 8px rgba(0,0,0,0.1),
+            0px 8px 16px rgba(0,0,0,0.1);
+}
+.reiniciar:hover{
+    cursor: pointer;
+}
+
+/*Partida*/
+
+.puntuacion{
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    top:5px;
+    right: 15px;
+    z-index: 10;
+    color: var(--puntuacion);
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: right;
+    font-family: Verdana;
+}
+.finJuego{
+    width: 190px;
+    height: 200px;
+    position: absolute;
+    background-repeat: no-repeat;
+	background-size: cover;
+    bottom: 90px;
+    left: calc(45% - 40px);
+    z-index: 2;
+    background: url(../imagenes/dino/finJuego.png) repeat-x 0px 0px;
+    background-size: 190px 190px;
+    background-position: 0px;
+}
+#puntuacionFinal{
+    position: absolute;
+    width: 240px;
+    bottom: 80px;
+    left: calc(45% - 40px);
+    font-size: 1.4rem;
+    font-family: fuente;
+}
+.difuminar{
+    animation: difumina ease 1.2s forwards;
+    -webkit-animation: difumina ease 1.2s forwards;
+ }
+ @keyframes difumina {
+     0%{
+         opacity: 1;
+     }
+     100%{
+         opacity:0;
+     }
+ }
+
+
+ /*Móvil*/
+ @media(max-width:768px){
+    .finJuego{
+        bottom: 120px;
+        width: 100px;
+        height: 200px;
+        background-size: 100px 100px;
+    }
+    #puntuacionFinal{
+        width: 200px;
+        bottom: 140px;
+        font-size: 1.1rem;
+        left: calc(45% - 65px);
+    }
+}
+
+

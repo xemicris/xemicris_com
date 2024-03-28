@@ -1,0 +1,35 @@
+<?php
+//Incluye clases importantes y define constantes
+
+//Archivos necesarios
+require_once('includes');
+require_once('includes');
+require_once('includes');
+require_once('includes');
+require_once('includes');
+require_once('includes');
+require_once('includes');
+require_once('includes');
+require_once('includes');
+
+
+//Constantes
+if(isset($_SERVER['REMOTE_ADDR'])){
+    define('ES_LOCAL', in_array($_SERVER['REMOTE_ADDR'],['127.0.0.1', '::1']));
+    define("XEMICRIS", ES_LOCAL ? '' : '');
+    define("RUTA", ES_LOCAL ? '' : '');
+    define("LLAVE", '');
+    define('CLAVE', ES_LOCAL ? '' : '');
+    define('USUARIO', ES_LOCAL ? '' : '');
+    define('CARPETA_IMAGENES', $_SERVER['DOCUMENT_ROOT'] . '');
+}else{
+    if($_SERVER['OS'] == "Windows_NT"){
+        define('', '');
+        define('', '');
+    }else{
+        define('', '');
+        define('', '');
+    }
+    
+}
+

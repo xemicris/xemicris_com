@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+    #enciende el motor
+    RewriteEngine on  
+    #lo que pasen, ve a public  
+    RewriteRule ^$ public/ [L] 
+    #(.*) cualquier cosa tras public lo pasas como parámetro ($1)
+    RewriteRule (.*) public/$1 [L] # 
+</IfModule>

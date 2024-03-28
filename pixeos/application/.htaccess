@@ -1,0 +1,2 @@
+#evita que puedan entrar al directorio al estar configurado con -
+Options -Indexes

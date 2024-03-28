@@ -1,0 +1,430 @@
+/*ELEMENTOS COMUNES*/
+.pagina {
+	float:left;
+	width:78%
+}
+
+.logo{
+	padding: 10px;
+    background:#ccc;
+	border-radius:5px;
+	height:150px;
+}
+
+#logo {
+	float:left;
+	margin-top:auto;
+	margin-left: auto;
+	margin-right:auto;
+	margin-bottom:auto;
+}
+
+#eslogan {
+	text-align:center;
+	margin-left: auto;
+	margin-right:auto;
+	margin-top:auto;
+	margin-bottom:auto;
+}
+
+#contacta:hover{
+	transition:all 1s ease 0s;
+	font-size:14pt;
+	text-shadow: 3px 3px 4px gray,
+				 -2px -3px 4px gray;
+}
+
+/*menú*/
+
+nav ul {
+	list-style:none; 
+	margin-bottom: 0;	
+}
+
+.menu {
+    float:left;
+	margin-top:0%;
+	height:40px;
+}
+
+.menu >li {
+	float:left;
+}
+
+.menu li {
+	border:1px solid;
+	border-radius:15px;
+	text-align:center;
+	width:150px;
+	padding:0px;
+}
+
+.menu li a {
+	text-decoration:none;
+	color:black;	
+}
+
+
+.menu li a:hover {
+	background-color:black;
+	color:white;
+	display:block;
+	border-radius:15px;
+	padding:1px;
+}
+
+.menu li ul {
+	display:none;
+	position:absolute;
+}
+
+.menu li:hover ul{
+	display:block;
+	
+}
+
+.contenedor_casa{
+    width: 82%;
+    display: flex;
+    justify-content: center;
+	margin-top:-30px;
+}
+.casa{
+    color: #000;
+    width: 30px;
+    height: 30px;
+}
+
+/*barra lateral*/
+.barra {
+	float:right;
+	width:20%;	
+}
+
+.caras {
+	 display: block;
+	 margin-left: auto;
+     margin-right: auto;	
+}
+
+#opiniones{
+	text-align:center;
+	text-decoration:underline;
+}
+
+.cliente{
+	text-align:center;
+	margin-right:2%;
+}
+
+
+/*pie de página*/
+footer{
+	clear:both;
+	border-radius:5px;
+	background-color:#ccc;
+	margin-top:25%;
+}
+
+.nombre {
+	width: 300px;
+	margin: 4px;
+	padding: 4px;
+	border: 1px solid gray;
+	border-radius:15px;
+	background-color:blue;
+	color:white;
+	text-align:center;
+	margin-left: auto;
+	margin-right:auto;
+	margin-top:45%;
+}
+
+.dni {
+	width: 200px;
+	margin: 4px;
+	padding: 4px;
+	border: 1px solid gray;
+	border-radius:15px;
+	background-color:blue;
+	color:white;
+	text-align:center;
+	margin-left: auto;
+	margin-right:auto;
+}
+
+
+
+/*PÁGINAS INDIVIDUALES*/
+
+/*índice*/
+.principal{
+	float:left;
+	width:50%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:auto;	
+	margin-top:-50px;
+}
+
+#acuerdo{
+	margin-left:25%;
+	margin-top:12%;
+}
+
+
+#experiencia {
+	position:fixed;
+	width:98%;
+	text-align:center;
+	font-size:30px;	
+	margin-top:auto;
+}
+
+#descripcion {
+	position:fixed;
+	width:98%;
+	text-align:center;
+	margin-top:10%;
+	font-size:110%;
+	text-decoration:underline;
+	margin-top:15%;
+}
+
+#dcp {
+	position:fixed;
+	width:98%;
+	text-align:center;
+	margin-top:25%;
+}
+
+
+/*despacho*/
+
+#despachoi {
+	margin-left:20%;
+	margin-top:5%;
+}
+
+.desd {
+	font-size:20px;
+	text-align:justify;
+}
+
+
+/*herencias*/
+
+#tituloh {
+	margin-top:7%;
+	text-align:center;
+	font-size:28px;	
+}
+
+.herd {
+	font-size:20px;
+	text-align:justify;
+}
+
+
+#hers {
+	margin-top:5%;
+	text-decoration:underline;
+	font-size:20px;
+}
+
+
+.herl {
+	font-size:20px;
+	text-align:justify;
+}
+
+
+/*divorcios*/
+
+#titulod{
+	margin-top:7%;
+	text-align:center;
+	font-size:28px;
+}
+
+.divod {
+	font-size:20px;
+	text-align:justify;
+}
+
+#divod_sub {
+	font-size:20px;
+	text-align:justify;
+	text-decoration:underline;	
+}
+
+.divol {
+	font-size:20px;
+	text-align:justify;
+	
+}
+
+/*mediacion*/
+
+#titulom{
+	margin-top:7%;
+	text-align:center;
+	font-size:28px;
+}
+
+.medd, .medv {
+	font-size:20px;
+	text-align:justify;
+	
+}
+
+
+/*adopciones*/
+
+#adopt {
+	text-align:center;
+	font-size:28px;
+}
+
+.dadop {
+	font-size:20px;
+	text-align:justify;
+}
+
+
+
+/*contacta*/
+
+#formulario fieldset {
+	list-style:none;
+	border:1px solid;
+	border-radius:15px;
+	background-color:#D8D8D8;
+	
+}
+
+#formt{
+	font-weight:bold;
+}
+
+#nombre, #apellidos, #fecha, #email, #opcion{
+	border-radius:15px;	
+	width:200px;
+	height:20px;
+	
+	
+}
+
+#mensaje{
+	border-radius:15px;
+	width:300px;
+	height:120px;
+}
+
+legend + label, label {
+	font-weight:600;
+}
+
+#nombre, #apellidos, #fecha, #email, #opcion:focus{
+	
+	outline:0px;
+}
+
+#formulario input:hover {
+	background-color:#E8E8E8;
+}
+#opcion:hover {
+	background-color:#E8E8E8;
+}
+#mensaje:hover {
+	background-color:#E8E8E8;
+}
+
+#formulario label {
+	width:150px;
+	float:left;
+}
+
+.ayuda {
+	color:green;
+	margin-left:5px;
+	
+}
+#asterisco {
+	color:red;
+}
+
+
+/*cambio de resolución*/
+
+
+@media screen and (max-width:1174px){
+.barra{
+	width:15%;
+	margin-right:2%;
+}
+
+}
+
+
+@media screen and (min-width:1119px){
+#acuerdo2{
+	
+	display:none;	
+	
+}
+
+}
+
+@media screen and (max-width:1119px){
+#acuerdo{
+	display:none;		
+}
+
+#acuerdo2{
+	margin-left:45%;
+	margin-top:12%;
+}
+
+}
+
+
+@media screen and (max-width:1000px){
+#despachoi{
+	display:none;		
+}
+}
+
+
+@media screen and (max-width:984px){
+.barra{
+	display:none;
+}
+
+}
+
+
+@media screen and (max-width:880px){
+.menu{
+	
+	display:none;	
+}
+
+}
+
+@media screen and (max-width:841px){
+#acuerdo2{
+	display:none;		
+}
+}
+
+@media screen and (min-width:841px){
+.minr{
+	display:none;	
+}
+
+}
+
+
+
+

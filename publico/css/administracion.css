@@ -1,0 +1,204 @@
+/* GENERALES */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    /* transición del fondo */
+    background-image: linear-gradient(to top, rgb(211, 206, 206) 0%, rgb(255, 255, 255) 60%);
+}
+/* cabecera */
+#imagen_principal{
+    background-image: url(imagenes/principal.jpg); /*imágen de fondo*/
+    background-repeat: no-repeat; /*no repita la imagen*/
+    background-size: cover; /*llena el ancho disponible*/
+    height: 18rem; /*altura*/
+    /*pongo relativo para que el hijo se pueda poner como absoluto y 
+    tome como referencia al padre para colocarse. Sino cogería todo el documento*/
+    position: relative;
+    margin-bottom: 3rem; /*márgen externo inferior*/
+    border-radius: 2rem;
+    height: 180px;
+}
+#contenido_imagen_principal{
+    position: absolute;
+    -ms-background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.6);/*sintaxis para sombreado nueva*/
+    width: 100%;  /*ancho*/
+    height: 100%;
+    display: flex; /*habilita flexbox en en menú de navegación*/
+    align-items: center; /*centrado vertical*/
+    justify-content: center; /*centrado horizontal*/
+    border-radius: 2rem;
+}
+#titulo{
+    color:white; /*color del texto*/
+}
+#titulo2{
+    text-align: center;
+}
+/* contenido principal */
+section{
+    /*creo 3 columnas, la del centro ocupa un 60%*/
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+}
+#portada{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -72px;
+    height: 50px; 
+}
+#portada p{
+    font-size:20px;
+    background-color: #FFc107;
+    padding: 3px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-radius: 10px 10px 0 0;
+}
+.casa__contenedor{
+    display: flex;
+    justify-content: center;
+    margin-top: -15px;
+    margin-bottom: 1rem;
+}
+.casa{
+    width: 25px;
+    height: 25px;
+    color:#000;
+    background-color: #FFc107;
+    border-radius: 0 0 10px 10px;
+    padding: .4rem;
+}
+#botones{
+    /*efecto sombra del bloque principal*/
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
+     box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
+     background-color: white;
+     padding: 2rem; /*espacio interno*/
+     border-radius: 1rem; /*borde redondeado*/
+     grid-column: 1 / 4 ; /*indico que los botones ocupen todo el ancho*/
+}
+button{
+    width:100%;
+    height: 70px;
+    margin-bottom: 3rem;
+    border-radius: 2rem;
+    font-size: 20px;
+    /* sombras de los botones */
+    -webkit-box-shadow: 6px 3px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 3px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 6px 3px 5px 0px rgba(0,0,0,0.75);
+}
+#ultimo_boton{
+    margin-bottom: 0px;   
+}
+button:hover{
+    cursor:pointer;/*cambia el cursor al posicionarse encima*/
+    background-color: #FFc107;
+}
+#busqueda{
+    font-size: 18px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: underline;
+}
+hr{
+    margin-top: 2rem;
+}
+ /* footer */
+#pie{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+}
+.footer{
+    font-size: 18px;
+    margin:3px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap:.3rem;
+}
+a{
+    color:black;
+    text-decoration: none;
+}
+a:hover{
+    cursor: pointer;
+    color:red; /*cambia de color al posicionar el cursor encima del Teléfono y email*/
+}
+#tf{
+    width:20px;
+    height: 20px;
+}
+#mail{
+    width: 20px;
+    height: 20px;
+}
+#arriba{
+    width: 20px;
+    height: 20px;
+}
+
+/* MÓVIL */
+#logo{
+    display: flex;
+    justify-content:center; /*situo el logo en la parte de arriba*/
+    height: 50px;
+}
+/*reduzco el logo*/
+#logo img{
+    width: 80px;
+    height: 80px;
+}
+/* TABLETA */
+@media (min-width: 780px) { 
+    #imagen_principal{
+        height: 300px;
+    }
+    #contenido_imagen_principal a{
+        display: flex;
+        gap:5rem; /*separación del logo y el título*/
+        font-size: 30px;
+        text-decoration: none;/*quitar el subrayado del enlace*/
+    }
+    #logo img{
+        margin-top: -40px;
+        width: 100px;
+        height: 100px;
+    }
+    #logo{
+        justify-content: start;
+        margin-top: 4rem;
+    }
+    section{
+        grid-template-columns: 10% 80% 10%;
+    }
+    #botones{
+         grid-column: 2 / 3 ; /*indico que los botones ocupen la columna 2 y 3*/
+    }
+    button{
+        font-size: 27px;
+    }
+}
+
+/* ESCRITORIO */
+@media (min-width: 1086px) { 
+    #logo img{
+        width: 120px;
+        height: 120px;
+        padding-top: 15px;
+    }
+    #contenido_imagen_principal a{
+        font-size: 40px;
+    }
+    button{
+        font-size: 40px; 
+    }
+}
+
+
