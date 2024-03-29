@@ -143,3 +143,16 @@ export function taskConstants(){
     }
 }
 
+export function darkMode(){
+    const urlFondo = `${server}/pixeos/panel/obtenerFondo`;
+    const urlCambiarFondo = `${server}/pixeos/panel/cambiarFondo`;
+    const btnFondo = document.getElementById("fondo") ? document.getElementById("fondo") : '';
+    const root = document.querySelector(":root");
+
+    return{
+        urlFondo,
+        urlCambiarFondo,
+        btnFondo,
+        root
+    }
+}

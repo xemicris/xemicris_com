@@ -35,8 +35,8 @@
                     <span id="boton-izquierdo" class="navbar-toggler-icon"></span>
                 </button>
 
-                <a class="color-logo navbar-brand fw-bold " href="<?php echo RUTA . 'panel/panel' ?>">
-                    <img id="logo" src="<?php echo RUTA . 'public/images/logo-claro.avif'; ?>" alt="logo">
+                <a class="contenedor-logo color-logo navbar-brand fw-bold " href="<?php echo RUTA . 'panel/panel' ?>">
+                    
                 </a>
 
                 <button id="dde" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

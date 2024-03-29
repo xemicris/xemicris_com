@@ -95,10 +95,14 @@ input:focus::placeholder {
 }
 
 /*Logo*/
-#logo {
-    width: 180px;
+.contenedor-logo {
+    background-image: url(../images/logo-claro.avif);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
     height: 50px;
-    margin-left: 25px;
+    width: 150px;
+    margin-left: 2rem;
 }
 
 .logo__movil {
@@ -158,19 +162,21 @@ input:focus::placeholder {
     margin-bottom: -2rem;
 }
 
-.registro__obligatorio--asterisco{
+.registro__obligatorio--asterisco {
     font-size: 15px;
     margin-top: -5px;
 }
 
-.h-captcha{
+.h-captcha {
     margin-bottom: -2rem;
 }
-@media (min-width: 550px){
-    .h-captcha{
+
+@media (min-width: 550px) {
+    .h-captcha {
         margin-top: -5.7rem;
     }
 }
+
 @media(min-width:768px) {
     .botones__recuperar {
         height: 40px;
@@ -189,10 +195,6 @@ input:focus::placeholder {
     }
 }
 
-/*menú desplegable*/
-.sombraDesplegable:hover {
-    background-color: #3498db !important;
-}
 
 /*Barras*/
 
@@ -215,7 +217,7 @@ input:focus::placeholder {
 
 .barra-lateral {
     width: 180px !important;
-    background: linear-gradient(#ebf0f4, #eeeeee) !important;
+    background: linear-gradient(#ebf0f4, #eeeeee);
     border-radius: 0px 200px 0px 0px;
     border-top: 2px rgb(71, 71, 71) outset !important;
     border-right: 2px rgb(71, 71, 71) inset !important;
@@ -241,10 +243,6 @@ input:focus::placeholder {
         border-radius: 0 0 200px 200px;
     }
 
-    .barra-lateral--oscuro {
-        border-top: 0 !important;
-        border-right: 0 !important;
-    }
 }
 
 /*Barra lateral colores*/
@@ -1330,27 +1328,31 @@ input:focus::placeholder {
 /* MODO OSCURO */
 
 /*Barra superior*/
-.barraSuperior--oscuro#barraSuperior {
+.dark #barraSuperior {
     background: #323334 !important;
     box-shadow: 5px 6px 7px 0px rgba(20, 18, 20, 0.75) !important;
 }
 
-.barraSuperior--oscuro #logo-superior,
-.barraSuperior--oscuro #flecha-desplegable {
+.dark .contenedor-logo {
+    background-image: url(../images/logo-oscuro.avif);
+}
+
+.dark #logo-superior,
+.dark #flecha-desplegable {
     color: #fff;
 }
 
-.barraSuperior--oscuro #biz,
-.barraSuperior--oscuro #dde {
+.dark #biz,
+.dark #dde {
     border: .5px solid #fff;
 }
 
-.barraSuperior--oscuro #boton-izquierdo,
-.barraSuperior--oscuro #boton-derecho {
+.dark #boton-izquierdo,
+.dark #boton-derecho {
     filter: invert(1);
 }
 
-.barraSuperior--oscuro .dropdown-menu {
+.dark .dropdown-menu {
     background-color: #323334;
 
     & a {
@@ -1358,94 +1360,91 @@ input:focus::placeholder {
     }
 }
 
-.barraSuperior--oscuro .dropdown-item:hover {
+.dark .dropdown-item:hover {
     background-color: #3498db;
 }
 
 /*Fin barra superior*/
 
 /*Barra lateral*/
-.barra-lateral--oscuro {
-    width: 180px !important;
+.dark .barra-lateral {
     background: #323334;
     box-shadow: 5px 6px 11px 0px rgba(20, 18, 20, 0.75) !important;
-    border-radius: 0px 200px 0px 0px;
-    border-top: 2px rgb(71, 71, 71) outset !important;
-    border-right: 2px rgb(71, 71, 71) inset !important;
+
 }
 
-.barra-lateral--oscuro .bi-x,
-.barra-lateral--oscuro #iconoXemicris {
+.dark .bi-x,
+.dark #iconoXemicris {
     filter: invert(1);
 }
 
-.barra-lateral--oscuro .barra-color,
-.barra-lateral--oscuro a,
-.barra-lateral--oscuro .proyecto {
+.dark .barra-color,
+.dark a,
+.dark .proyecto {
     color: #fff;
 }
 
 /*Fin barra lateral*/
 
 /*Notas*/
-.proyectos--oscuro .notas__tarjeta--contenedor {
+.dark .notas__tarjeta--contenedor {
     background: #323334;
     color: #fff;
 }
 
-.proyectos--oscuro .card {
+.dark .card {
     background-color: #323334;
     color: #fff;
 }
 
-.proyectos--oscuro .card-header {
+.dark .card-header {
     color: #fff;
 }
 
-.proyectos--oscuro .subtituloNota {
+.dark .subtituloNota {
     font-size: 15px;
 }
 
-.proyectos--oscuro .contenedor--icono {
+.dark .contenedor--icono {
     filter: invert(1);
     -webkit-filter: invert(1);
 }
 
-.proyectos--oscuro .tarea {
+.dark .tarea {
     color: #fff;
 }
 
 /*Fin notas*/
 
 /*Ventana modal notas -> Nueva Tarea*/
-.modalNuevaTareaNota--oscuro>.modal-dialog>.modal-content {
+.dark .modal-dialog>.modal-content {
     background-color: #323334;
 }
 
-.modalNuevaTareaNota--oscuro #encabezadoCrear {
+.dark #encabezadoCrear {
     color: #fff;
 }
 
-.modalNuevaTareaNota--oscuro #aspaTareas {
+.dark #aspaTareas {
     filter: invert(1);
     -webkit-filter: invert(1);
 }
 
-.modalNuevaTareaNota--oscuro .tituloCrear--contenedor,
-.modalNuevaTareaNota--oscuro .tituloCrear--contenedor>input,
-.modalNuevaTareaNota--oscuro .descripcionCrear--contenedor,
-.modalNuevaTareaNota--oscuro .descripcionCrear--contenedor>textarea {
+.dark .tituloCrear--contenedor,
+.dark .tituloCrear--contenedor>input,
+.dark .descripcionCrear--contenedor,
+.dark .descripcionCrear--contenedor>textarea {
     background-color: #323334;
     color: #fff;
 }
 
-.modalNuevaTareaNota--oscuro .fechas>input,
-.modalNuevaTareaNota--oscuro .fechas>select {
+.dark .fechas>input,
+.dark .fechas>select {
     background-color: #323334;
     color: #fff;
 }
 
-.modalNuevaTareaNota--oscuro #fechaCrear::-webkit-calendar-picker-indicator {
+.dark #fechaCrear::-webkit-calendar-picker-indicator {
     cursor: pointer;
     border-radius: 4px;
     margin-right: 2px;
@@ -1456,18 +1455,18 @@ input:focus::placeholder {
 /*Fin Ventana modal notas -> Nueva Tarea*/
 
 /*Ventana modal notas -> editar nota*/
-.modalNotaCrearEditar--oscuro .modal-content,
-.modalNotaCrearEditar--oscuro input,
-.modalNotaCrearEditar--oscuro input:focus {
+.dark .modal-content,
+.dark input,
+.dark input:focus {
     background-color: #323334;
     color: #fff;
 }
 
-.modalNotaCrearEditar--oscuro label {
+.dark label {
     color: #fff;
 }
 
-.modalNotaCrearEditar--oscuro .btn-close {
+.dark .btn-close {
     filter: invert(1);
     -webkit-filter: invert(1);
 }
@@ -1475,12 +1474,12 @@ input:focus::placeholder {
 /*Fin ventana modal notas -> editar nota*/
 
 /*Ventana modal confirmación de edición, de confirmación eliminación de nota y tareas y compartir, descompartir e información de nota*/
-.footer--oscuro+.swal2-container>.swal2-popup {
+.dark .swal2-container>.swal2-popup {
     background-color: #323334;
     color: #fff;
 }
 
-.footer--oscuro+.modal-backdrop+.swal2-container>.swal2-popup {
+.dark .modal-backdrop+.swal2-container>.swal2-popup {
     background-color: #323334;
     color: #fff;
 }
@@ -1488,49 +1487,49 @@ input:focus::placeholder {
 /*Ventana modal compartir nota*/
 
 /*Tareas*/
-.tareas--oscuro .card {
+.dark .card {
     background-color: #323334;
 }
 
-.tareas--oscuro .card-header {
+.dark .card-header {
     color: #fff;
 }
 
-.tareas--oscuro .titulosTareas {
+.dark .titulosTareas {
     color: #fff;
 }
 
-.tareas--oscuro .icono--orden__calendario {
+.dark .icono--orden__calendario {
     filter: invert(1);
     -webkit-filter: invert(1);
 }
 
-.tareas--oscuro .iconosRojos {
+.dark .iconosRojos {
     filter: invert(20%) sepia(43%) saturate(5066%) hue-rotate(352deg) brightness(86%) contrast(93%);
 }
 
-.tareas--oscuro h3 {
+.dark h3 {
     color: #fff;
 }
 
 /*Fin Tareas*/
 
 /*Ventana modal tareas -> crear tarea*/
-.tareas--oscuro .modal-content,
-.tareas--oscuro #tituloCrearEditar,
-.tareas--oscuro #descripcionCrearEditar,
-.tareas--oscuro #fechaCrearEditar,
-.tareas--oscuro #notif {
+.dark .modal-content,
+.dark #tituloCrearEditar,
+.dark #descripcionCrearEditar,
+.dark #fechaCrearEditar,
+.dark #notif {
     background-color: #323334;
     color: #fff;
 }
 
-.tareas--oscuro #aspaTareas {
+.dark #aspaTareas {
     filter: invert(1);
     -webkit-filter: invert(1);
 }
 
-.tareas--oscuro #fechaCrearEditar::-webkit-calendar-picker-indicator {
+.dark #fechaCrearEditar::-webkit-calendar-picker-indicator {
     cursor: pointer;
     border-radius: 4px;
     margin-right: 2px;
@@ -1541,44 +1540,44 @@ input:focus::placeholder {
 /*Fin ventana modal tareas -> crear tarea*/
 
 /*Contacto*/
-.contacto--oscuro .card-body,
-.contacto--oscuro input,
-.contacto--oscuro select {
+.dark .card-body,
+.dark input,
+.dark select {
     background-color: #323334;
     color: #fff;
 }
 
-.contacto--oscuro .form-check-input {
+.dark .form-check-input {
     border: 1px solid #fff;
 }
 
 /*Fin contacto*/
 
 /*Perfil*/
-.perfil--oscuro .cartel-derecho,
-.perfil--oscuro input,
-.perfil--oscuro input:focus {
+.dark .cartel-derecho,
+.dark input,
+.dark input:focus {
     background-color: #323334;
     color: #fff;
 }
 
-.perfil--oscuro .form-control:disabled {
+.dark .form-control:disabled {
     background-color: #4e4f51;
 }
 
-.perfil--oscuro .form-control:focus {
+.dark .form-control:focus {
     border-bottom: 1px solid rgb(255, 255, 255) !important;
 }
 
 /*Fin perfil*/
 
 /*Calendario*/
-.calendario--oscuro #calendario td {
+.dark #calendario td {
     background-color: #323334;
     color: #fff;
 }
 
-.calendario--oscuro #calendario td.tarea-calendario {
+.dark #calendario td.tarea-calendario {
     background-color: #3498db;
 }
 
