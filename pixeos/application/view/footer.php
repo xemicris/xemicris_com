@@ -32,7 +32,7 @@
 
             <?php }else if($url == 'profile'){ ?>
 
-                <script src="<?php echo RUTA ?>js/perfil.js"></script>  
+                <script src="<?php echo RUTA ?>js/profile.js"></script>  
 
             <?php }else if($url == 'project'){ ?>
 

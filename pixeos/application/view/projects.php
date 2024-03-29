@@ -113,7 +113,7 @@
   <!-- <div class="project2"></div> -->
 
 </main>
-<script src="<?php echo RUTA ?>js/alturaPerfil.js"></script>
+<script src="<?php echo RUTA ?>js/profileHeight.js"></script>
 <script src="<?php echo RUTA ?>js/html2pdf.bundle.min.js"></script>
 <footer>
   <?php include_once("footer.php"); ?>
