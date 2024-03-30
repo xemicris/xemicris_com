@@ -10,45 +10,35 @@ const{
 
 
 if (btnFondo) btnFondo.addEventListener('click', changeBackground);
-readBackground();
+
+initBackground();
 
 /**
  * Función que obtiene el fondo y lo guarda con el método setItem de la interfaz localStorage
  */
-async function readBackground() {
-    //petición
-    await useFetch(urlFondo)
-    fetch(urlFondo, {
-        method: 'POST'
-    })
-        .then(respuesta => respuesta.json())
-        .then(respuesta => {
-            //guardado del fondo
-            if (respuesta[ 'fondo' ] == '0') {
-                localStorage.setItem('modoOscuro', 'desactivado');
-            } else {
-                localStorage.setItem('modoOscuro', 'activado');
-            }
-        })
-
-        background();
+async function initBackground() {
+    try{
+        const data = await useFetch(urlFondo)
+        const darkMode = data.fondo === '1';
+        setMode(darkMode);
+        
+    }catch(error){
+        console.error('Ha habido un error al obtener el fondo', error);
+    }
 }
 
 /**
  * Función que cambia el fondo de forma manual
  */
-function background() {
-    if (localStorage.getItem('modoOscuro') == 'desactivado') {
-
-        root.classList.remove('dark');
-
-        //Menú superior
-        if (btnFondo) btnFondo.textContent = "Modo oscuro";
-
-    } else if (localStorage.getItem('modoOscuro') == 'activado') {
+function setMode(darkMode) {
+    if (darkMode) {
         root.classList.add('dark');
-        //Menú superior
         if (btnFondo) btnFondo.textContent = "Modo claro";
+        localStorage.setItem('darkMode', 'enabled');
+    } else {
+        root.classList.remove('dark');
+        if (btnFondo) btnFondo.textContent = "Modo oscuro";
+        localStorage.setItem('darkMode', 'disabled');
     }
 }
 
@@ -56,19 +46,16 @@ function background() {
  * Función que obtiene el fondo actual con el método getItem y envía el valor contrario para el cambio
  */
 async function changeBackground() {
-    let fnd = 0;
-    //cambio de fondo
-    if (localStorage.getItem('modoOscuro') == 'activado') {
-        fnd = 0;
-        localStorage.setItem('modoOscuro', 'desactivado');
-    } else {
-        fnd = 1;
-        localStorage.setItem('modoOscuro', 'activado');
-    }
-    const simpleData = { 'fondo': fnd };
-    await useFetch(urlCambiarFondo, '', simpleData)
+    try {
+        const actualMode = localStorage.getItem('darkMode') === 'enabled';
+        const newMode = !actualMode;
+        const simpleData = { 'fondo': newMode ? '1' : '0' };
+        await useFetch(urlCambiarFondo, '', simpleData);
+        setMode(newMode);
 
-    background();
+    } catch (error) {
+        console.error('Ha habido un error al cambiar el fondo:', error);
+    }
 }
 
 
