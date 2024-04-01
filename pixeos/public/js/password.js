@@ -3,7 +3,7 @@ import { getProjectRoute } from "./getProjectRoutes.js";
 const server = getProjectRoute();
 
 const ojo = document.querySelectorAll(".ojo-contrasena");
-const password = document.querySelectorAll(".contrasena");
+
 if(ojo){
     ojo.forEach(element =>{
         element.addEventListener('click', mostrarOcultarContrasena);

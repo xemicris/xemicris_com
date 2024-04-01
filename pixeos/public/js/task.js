@@ -86,7 +86,7 @@ export function task(hayTareas, alturaInsertarMenu, tarea, contenedor) {
         td.appendChild(h3);
         tr1.appendChild(td);
 
-        contenedor.appendChild(tr1);
+        if(contenedor) contenedor.appendChild(tr1);
         return contenedor;
     }
 

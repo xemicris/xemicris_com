@@ -169,8 +169,7 @@ async function mostrarProyectos(tipoNota = 1) {
 }
 
 //lanzar modal
-crear.forEach(cr => {
-    cr.addEventListener('click', () => {
+crear.addEventListener('click', () => {
         if ('.modal-backdrop') {
             body.classList.remove('.modal-backdrop');
         };
@@ -182,8 +181,7 @@ crear.forEach(cr => {
         botonCrearEditar.textContent = "Crear";
         modalNotaCrearEditar.show();
         opcion = 'crear';
-    });
-})
+});
 
 
 
@@ -196,14 +194,14 @@ crear.forEach(cr => {
  */
 const on = (element, event, selectores, handler) => {
     element.addEventListener(event, e => {
-        selectores.forEach(selector => {
+        for (const selector of selectores) {
             if (e.target.closest(selector)) {
-                handler(e)
+                handler(e);
+                break; // Terminar el bucle una vez que se haya manejado el evento
             }
-        })
-
-    })
-}
+        }
+    });
+};
 
 /**
  * Función que detecta el radiobutton marcado
@@ -235,18 +233,14 @@ radioNotas.forEach(radioNota => {
  */
 
 on(document, 'click', [ '.editar' ], e => {
-    let botonesEditar = document.querySelectorAll(".editar");
+
     opcion = 'editar';
     //Pone contenido a editar y llama a la función que envía el id del proyecto
-
-    botonesEditar.forEach(boton => {
-        const inputEditar = document.getElementById("nombre");
-        const fila = e.target.parentNode.parentNode.parentNode;
-        const contenidoEditar = fila.firstChild.firstChild.firstChild.textContent;
-        inputEditar.value = contenidoEditar;
-        enviarIdNotaAEditar(e);
-    });
-
+    const inputEditar = document.getElementById("nombre");
+    const fila = e.target.closest('.primero');
+    const contenidoEditar = fila.firstElementChild?.firstElementChild?.textContent || '';
+    inputEditar.value = contenidoEditar;
+    enviarIdNotaAEditar(e);
 
     //mostrar modal
     tituloNota.textContent = "Editar tarea";

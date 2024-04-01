@@ -1,7 +1,7 @@
 import { taskRoutes, taskConstants } from './projectData.js'
 import { useFetch } from "./useFetch.js";
 import { task } from './task.js';
-import { tareasSeparadas } from './order.js';
+import { ordenarTareasPorFecha, ordenarTareasPorNombre } from './order.js';
 import { convertirFechaEspanol, convertirFechaIngles } from './conversions.js';
 
 //rutas
@@ -59,14 +59,15 @@ let opcion = '';
  */
 const on = (element, event, selectores, handler) => {
     element.addEventListener(event, e => {
-        selectores.forEach(selector => {
+        for (const selector of selectores) {
             if (e.target.closest(selector)) {
-                handler(e)
+                handler(e);
+                break; // Terminar el bucle una vez que se haya manejado el evento
             }
-        })
+        }
+    });
+};
 
-    })
-}
 
 /**
  * Función que gestiona el orden de las tareas según se hace clic en el icono fechas o nombre
@@ -91,6 +92,67 @@ on(document, 'click', [ '.icono--orden' ], async (e) => {
     }
         
 })
+
+/**
+ * Función que separa las tareas y manda ordenarlas
+ * @param {array} tareas 
+ * @param {string} tipoOrden 
+ * @returns {array} todasTareas
+ */
+function tareasSeparadas(tareas, tipoOrden = 'nombre') {
+
+    let tempCompFecha = [];
+    let tempCompSnFecha = [];
+    let tempIncompFecha = [];
+    let tempIncompSnFecha = [];
+    let completos = [];
+    let incompletos = [];
+    let todasTareas = [];
+
+    tareas.forEach(tarea => {
+        if (tarea[ 'estado' ] == 1) {
+            tarea[ 'completada' ] = 'tarea-completada';
+            tarea[ 'checked' ] = 'checked';
+            completos.push(tarea);
+        } else if (tarea[ 'estado' ] == 0) {
+            tarea[ 'completada' ] = '';
+            tarea[ 'checked' ] = '';
+            incompletos.push(tarea);
+        }
+    });
+    if (tipoOrden == 'calendario') {
+        if (completos.length > 0) {
+            completos.forEach(completo => {
+                (completo[ 'fecha' ] != null) ? tempCompFecha.push(completo) : tempCompSnFecha.push(completo);
+            })
+        }
+        if (incompletos.length > 0) {
+            incompletos.forEach(incompleto => {
+                (incompleto[ 'fecha' ] != null) ? tempIncompFecha.push(incompleto) : tempIncompSnFecha.push(incompleto);
+            })
+        }
+        tempCompSnFecha = ordenarTareasPorNombre(tempCompSnFecha);
+        tempIncompSnFecha = ordenarTareasPorNombre(tempIncompSnFecha);
+        completos = tempCompFecha.concat(tempCompSnFecha)
+        incompletos = tempIncompFecha.concat(tempIncompSnFecha)
+        completos = ordenarTareasPorFecha(completos);
+        incompletos = ordenarTareasPorFecha(incompletos);
+        todasTareas = incompletos.concat(completos);
+        mostrarTareas(todasTareas);
+        return;
+    } else if (tipoOrden == 'nombreclic') {
+        completos = ordenarTareasPorNombre(completos);
+        incompletos = ordenarTareasPorNombre(incompletos);
+        todasTareas = incompletos.concat(completos);
+        mostrarTareas(todasTareas);
+        return;
+    } else if (tipoOrden == 'nombre') {
+        completos = ordenarTareasPorNombre(completos);
+        incompletos = ordenarTareasPorNombre(incompletos);
+    }
+    todasTareas = incompletos.concat(completos);
+    return todasTareas;
+}
 
 /**
  * Función que muestra las tareas
@@ -185,8 +247,8 @@ let idEditar = 0;
 on(document, 'click', [ '.btn-editar' ], async (e) => {
 
     //captura la fila
-    const fila = e.target.parentNode.parentNode.parentNode;
-    idEditar = fila.children[ 0 ].value;
+    const fila = e.target.closest('tr');
+    idEditar = fila.firstChild.value;
     Array.from(tipoNotificacion, (option) => {
         option.removeAttribute('selected');
     })
@@ -236,8 +298,8 @@ on(document, 'click', [ '.btn-mostrar' ], async (e) => {
     descripcionMostrar.textContent = '';
 
     //captura la fila
-    const fila = e.target.parentNode.parentNode.parentNode;
-    idEditar = fila.children[ 0 ].value;
+    const fila = e.target.closest('tr');
+    idEditar = fila.firstElementChild.value;
 
     headerMostrar.textContent = "Tarea";
 
@@ -269,7 +331,9 @@ on(document, 'click', [ '.btn-mostrar' ], async (e) => {
 
             }
         })
+
     }
+
     //mostrar modal
     modalTareaMostrar.show();
 })
@@ -384,7 +448,7 @@ botonTareas.addEventListener('click', async () => {
  */
 on(document, 'click', [ '.btn-eliminar' ], async (e) => {
     //captura la fila
-    const fila = e.target.parentNode.parentNode.parentNode
+    const fila = e.target.closest('tr');
     const id = fila.firstElementChild.value
 
     Swal.fire({
@@ -457,7 +521,7 @@ on(document, 'click', [ '#btnEliminarTodo' ], e => {
 on(document, 'change', [ '.completado' ], async (e) => {
     let idTarea = 0;
     let estado;
-    const fila = e.target.parentNode.parentNode;
+    const fila = e.target.closest('tr');
 
     if (e.target.checked) {
         estado = 1;
@@ -517,36 +581,40 @@ function barraProgreso(porcentaje, color, letra, progreso) {
  * Función que calcula y muestra la barra de progreso
  */
 async function porcentaje() {
+    try {
+        const barra = document.getElementById('barra-progreso');
 
-    let barra = document.getElementById('barra-progreso');
-    let porcent = 0;
-    let color = '';
-    let progreso = '';
-    let letra = '';
+        // Realizar la petición para obtener el porcentaje
+        const respuesta = await useFetch(urlPorcentaje);
 
-    //petición
-    const respuesta = await useFetch(urlPorcentaje)
+        let porcentaje = respuesta + '%';
+        let color = '';
+        let letra = '';
 
-    porcent = respuesta;
-    progreso = respuesta + '%';
+        // Determinar el color y la letra según el porcentaje
+        if (respuesta < 25) {
+            color = 'danger';
+            letra = 'white';
+        } else if (respuesta <= 50) {
+            color = 'warning';
+            letra = 'dark';
+        } else if (respuesta <= 75) {
+            color = 'info';
+            letra = 'dark';
+        } else if (respuesta == 100) {
+            color = 'success';
+            porcentaje = '¡Completado!';
+            letra = 'white';
+        }
 
-    if (porcent < 25) {
-        color = 'danger';
-        letra = 'white';
-    } else if (porcent <= 50) {
-        color = 'warning';
-        letra = 'dark';
-    } else if (porcent <= 75) {
-        color = 'info'
-        letra = 'dark';
-    } else if (porcent == 100) {
-        color = 'success';
-        progreso = '¡Completado!';
-        letra = 'white';
-
+        // Crear y añadir el elemento de la barra de progreso
+        barra.innerHTML = '';
+        barra.appendChild(barraProgreso(respuesta, color, letra, porcentaje));
+    } catch (error) {
+        console.error('Error al obtener el porcentaje:', error);
     }
-    barra.appendChild(barraProgreso(porcent, color, letra, progreso));  
 }
+
 
 /**
  * Función para que el menú de navegación se quede ajustado al hacer scroll

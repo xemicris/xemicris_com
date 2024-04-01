@@ -56,7 +56,7 @@ export function taskRoutes(){
 
 export function noteConstants() {
     const formulario = document.querySelector('#formularioModalCrearEditar');
-    const crear = document.querySelectorAll('.crear');
+    const crear = document.querySelector('.crear');
     const nombre = document.querySelector('#nombre');
     const tituloNota = document.querySelector('.tituloNota');
     const body = document.getElementsByTagName("body")[ 0 ];
