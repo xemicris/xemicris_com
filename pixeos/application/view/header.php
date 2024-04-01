@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" link rel="preload" as="style">
-    <script src="https://kit.fontawesome.com/d7d3a2cbd3.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;700;900&display=swap" rel="stylesheet" link rel="preload" as="style">
-    <link rel="stylesheet" href="<?php echo RUTA ?>public\css\bootstrap.min.css" link rel="preload" as="style">
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" link rel="preload" as="style"></script>
-    <link rel="shortcut icon" href="<?php echo RUTA . 'public/images/logo-movil.ico'; ?>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" link as="style">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;700;900&display=swap" as="style">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" link as="style"></script>
     <link rel="stylesheet" href="<?php echo RUTA ?>css/style.css">
+    <link rel="shortcut icon" href="<?php echo RUTA . 'public/images/logo-movil.ico'; ?>">
     <title><?php echo $datos['titulo'] ?></title>
     <meta name="theme-color" content="#F5BC51">
 </head>
@@ -36,7 +36,7 @@
                 </button>
 
                 <a class="contenedor-logo color-logo navbar-brand fw-bold " href="<?php echo RUTA . 'panel/panel' ?>">
-                    
+
                 </a>
 
                 <button id="dde" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -112,7 +112,7 @@
                             if ($url == 'panel') {
                             ?>
                                 <li class="barra-color">
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#modal1" class="crear cambio-color nav-link px-3 active mb-3">
+                                    <a href="#" data-bs-target="#modal1" class="crear cambio-color nav-link px-3 active mb-3">
                                         <span class="me-1"><i class="bi bi-folder-plus"></i></span>
                                         <span>Crear Nota</span>
                                     </a>

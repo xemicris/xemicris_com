@@ -34,7 +34,7 @@
         </div>
       </form>
       <div class="notas__nuevaTarea--contenedor">
-        <i class="crear bi bi-plus-circle-fill fs-2 border-0" data-bs-toggle="modal" data-bs-target="#modal1"></i>
+        <i class="crear bi bi-plus-circle-fill fs-2 border-0" data-bs-target="#modal1"></i>
       </div>
     </div>
 

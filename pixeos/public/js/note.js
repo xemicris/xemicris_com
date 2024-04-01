@@ -119,7 +119,7 @@ export function note(completado, urlProyecto, colorProyecto, nombreProyecto, tar
     editarBtn.id = id;
     editarBtn.type = "button";
     editarBtn.className = "editar btn btn-sm btn-success";
-    editarBtn.dataset.bsToggle = "modal";
+   
     editarBtn.dataset.bsTarget = "#modal";
     editarBtn.textContent = "Editar";
 

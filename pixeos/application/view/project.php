@@ -121,7 +121,7 @@
                                 <button id="btnEliminarTodo" class=" botonTarea btnEliminarTodoOculto btn btn-danger btn-sm mt-3 mb-3">Eliminar todo</button>
                             </div>
                             <div>
-                                <i id="btnCrear" class="bi bi-plus-circle-fill fs-2 btn btn-sm btn-outline-primary border-0 mt-1" data-bs-toggle="modal"></i>
+                                <i id="btnCrear" class="bi bi-plus-circle-fill fs-2 btn btn-sm btn-outline-primary border-0 mt-1"></i>
                             </div>
                         </div>
                     </div>

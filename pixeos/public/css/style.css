@@ -375,6 +375,10 @@ input:focus::placeholder {
     color: #000;
 }
 
+.crear.bi-plus-circle-fill:hover{
+    cursor: pointer;
+}
+
 
 /*Notas*/
 .notas__tarjeta--contenedor {
@@ -869,7 +873,7 @@ input:focus::placeholder {
 }
 
 .perfil-defecto{
-    max-width: 7rem;
+    max-width: 5rem;
     min-width: 3rem;
 }
 

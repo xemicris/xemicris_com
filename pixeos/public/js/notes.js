@@ -169,7 +169,8 @@ async function mostrarProyectos(tipoNota = 1) {
 }
 
 //lanzar modal
-crear.addEventListener('click', () => {
+crear.forEach(cr => {
+    cr.addEventListener('click', () => {
         if ('.modal-backdrop') {
             body.classList.remove('.modal-backdrop');
         };
@@ -181,7 +182,8 @@ crear.addEventListener('click', () => {
         botonCrearEditar.textContent = "Crear";
         modalNotaCrearEditar.show();
         opcion = 'crear';
-});
+    });
+})
 
 
 
