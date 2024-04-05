@@ -4,9 +4,9 @@
         <div class="envoltorio swiper-wrapper">
 
             <div class="carta swiper-slide">
-                <div class="carta__info-icono"><i class="ri-information-line"></i></div>
+                <div class="carta__info-icono"><img src="<?php echo IMAGENES . "masinfo/info_perfil.svg"; ?>" class="info__trabajoss" alt="icono más información del trabajo" width="40" height="40"></div>
                 <div class="carta__imagen">
-                    <img src="<?php echo IMAGENES . "trabajos/buscagif.jpg"; ?>" alt="imagen app ingresos y gastos">
+                    <img loading="lazy" src="<?php echo IMAGENES . "trabajos/buscagif.avif"; ?>" alt="imagen app ingresos y gastos">
                 </div>
                 <div class="carta__contenido">
                     <span class="carta__titulo">Buscador de Gifs</span>
@@ -35,9 +35,9 @@
             </div>
 
             <div class="carta swiper-slide">
-                <div class="carta__info-icono"><i class="ri-information-line"></i></div>
+                <div class="carta__info-icono"><img src="<?php echo IMAGENES . "masinfo/info_perfil.svg"; ?>" class="info__trabajoss" alt="icono más información del trabajo" width="40" height="40"></div>
                 <div class="carta__imagen">
-                    <img src="<?php echo IMAGENES . "trabajos/veintiuno.jpg"; ?>" alt="imagen app ingresos y gastos">
+                    <img loading="lazy" src="<?php echo IMAGENES . "trabajos/veintiuno.avif"; ?>" alt="imagen app ingresos y gastos">
                 </div>
                 <div class="carta__contenido">
                     <span class="carta__titulo">Veintiuno</span>
@@ -65,9 +65,9 @@
             </div>
 
             <div class="carta swiper-slide">
-                <div class="carta__info-icono"><i class="ri-information-line"></i></div>
+                <div class="carta__info-icono"><img src="<?php echo IMAGENES . "masinfo/info_perfil.svg"; ?>" class="info__trabajoss" alt="icono más información del trabajo" width="40" height="40"></div>
                 <div class="carta__imagen">
-                    <img src="<?php echo IMAGENES . "trabajos/dino.jpg"; ?>" alt="imagen app ingresos y gastos">
+                    <img loading="lazy" src="<?php echo IMAGENES . "trabajos/dino.avif"; ?>" alt="imagen app ingresos y gastos">
                 </div>
                 <div class="carta__contenido">
                     <span class="carta__titulo">Salta los obstáculos</span>
@@ -93,9 +93,9 @@
             </div>
 
             <div class="carta swiper-slide">
-                <div class="carta__info-icono"><i class="ri-information-line"></i></div>
+                <div class="carta__info-icono"><img src="<?php echo IMAGENES . "masinfo/info_perfil.svg"; ?>" class="info__trabajoss" alt="icono más información del trabajo" width="40" height="40"></div>
                 <div class="carta__imagen">
-                    <img src="<?php echo IMAGENES . "trabajos/libreta.jpg"; ?>" alt="imagen app ingresos y gastos">
+                    <img loading="lazy" src="<?php echo IMAGENES . "trabajos/libreta.avif"; ?>" alt="imagen app ingresos y gastos">
                 </div>
                 <div class="carta__contenido">
                     <span class="carta__titulo">App ingresos y gastos</span>
@@ -125,9 +125,9 @@
             </div>
 
             <div class="carta swiper-slide">
-                <div class="carta__info-icono"><i class="ri-information-line"></i></div>
+                <div class="carta__info-icono"><img src="<?php echo IMAGENES . "masinfo/info_perfil.svg"; ?>" class="info__trabajoss" alt="icono más información del trabajo" width="40" height="40"></div>
                 <div class="carta__imagen">
-                    <img src="<?php echo IMAGENES . "trabajos/contadorDigital.png"; ?>" alt="imagen app ingresos y gastos">
+                    <img loading="lazy" src="<?php echo IMAGENES . "trabajos/contadorDigital.avif"; ?>" alt="imagen app ingresos y gastos">
                 </div>
                 <div class="carta__contenido">
                     <span class="carta__titulo">Contador Digital</span>
@@ -155,9 +155,9 @@
             </div>
 
             <div class="carta swiper-slide">
-                <div class="carta__info-icono"><i class="ri-information-line"></i></div>
+                <div class="carta__info-icono"><img src="<?php echo IMAGENES . "masinfo/info_perfil.svg"; ?>" class="info__trabajoss" alt="icono más información del trabajo" width="40" height="40"></div>
                 <div class="carta__imagen">
-                    <img src="<?php echo IMAGENES . "trabajos/encuentraParejas.jpg"; ?>" alt="imagen juego emparejar">
+                    <img loading="lazy" src="<?php echo IMAGENES . "trabajos/encuentraParejas.avif"; ?>" alt="imagen juego emparejar">
                 </div>
                 <div class="carta__contenido">
                     <span class="carta__titulo">Encuentra las parejas</span>
@@ -184,9 +184,9 @@
             </div>
 
             <div class="carta swiper-slide">
-                <div class="carta__info-icono"><i class="ri-information-line"></i></div>
+                <div class="carta__info-icono"><img src="<?php echo IMAGENES . "masinfo/info_perfil.svg"; ?>" class="info__trabajoss" alt="icono más información del trabajo" width="40" height="40"></div>
                 <div class="carta__imagen">
-                    <img src="<?php echo IMAGENES . "trabajos/ppt.jpg"; ?>" alt="imagen juego piedra, papel o tijera">
+                    <img loading="lazy" src="<?php echo IMAGENES . "trabajos/ppt.avif"; ?>" alt="imagen juego piedra, papel o tijera">
                 </div>
                 <div class="carta__contenido">
                     <span class="carta__titulo">Piedra-papel-tijera</span>
@@ -213,9 +213,9 @@
             </div>
 
             <div class="carta swiper-slide">
-                <div class="carta__info-icono"><i class="ri-information-line"></i></div>
+                <div class="carta__info-icono"><img src="<?php echo IMAGENES . "masinfo/info_perfil.svg"; ?>" class="info__trabajoss" alt="icono más información del trabajo" width="40" height="40"></div>
                 <div class="carta__imagen">
-                    <img src="<?php echo IMAGENES . "trabajos/carrera.png"; ?>" alt="imagen juego carreras">
+                    <img loading="lazy" src="<?php echo IMAGENES . "trabajos/carrera.avif"; ?>" alt="imagen juego carreras">
                 </div>
                 <div class="carta__contenido">
                     <span class="carta__titulo">Competición</span>
@@ -241,9 +241,9 @@
             </div>
 
             <div class="carta swiper-slide">
-                <div class="carta__info-icono"><i class="ri-information-line"></i></div>
+                <div class="carta__info-icono"><img src="<?php echo IMAGENES . "masinfo/info_perfil.svg"; ?>" class="info__trabajoss" alt="icono más información del trabajo" width="40" height="40"></div>
                 <div class="carta__imagen">
-                    <img src="<?php echo IMAGENES . "trabajos/calculadora.png"; ?>" alt="imagen calculadora">
+                    <img loading="lazy" src="<?php echo IMAGENES . "trabajos/calculadora.avif"; ?>" alt="imagen calculadora">
                 </div>
                 <div class="carta__contenido">
                     <span class="carta__titulo">Calculadora</span>
@@ -268,9 +268,9 @@
             </div>
 
             <div class="carta swiper-slide">
-                <div class="carta__info-icono"><i class="ri-information-line"></i></div>
+                <div class="carta__info-icono"><img src="<?php echo IMAGENES . "masinfo/info_perfil.svg"; ?>" class="info__trabajoss" alt="icono más información del trabajo" width="40" height="40"></div>
                 <div class="carta__imagen">
-                    <img src="<?php echo IMAGENES . "trabajos/gestorProductos.jpg"; ?>" alt="imagen gestor productos">
+                    <img loading="lazy" src="<?php echo IMAGENES . "trabajos/gestorProductos.avif"; ?>" alt="imagen gestor productos">
                 </div>
                 <div class="carta__contenido">
                     <span class="carta__titulo">Gestor de productos</span>
@@ -299,9 +299,9 @@
             </div>
 
             <div class="carta swiper-slide">
-                <div class="carta__info-icono"><i class="ri-information-line"></i></div>
+                <div class="carta__info-icono"><img src="<?php echo IMAGENES . "masinfo/info_perfil.svg"; ?>" class="info__trabajoss" alt="icono más información del trabajo" width="40" height="40"></div>
                 <div class="carta__imagen">
-                    <img src="<?php echo IMAGENES . "trabajos/catalogoLibros.jpg"; ?>" alt="imagen catálogo de libros">
+                    <img loading="lazy" src="<?php echo IMAGENES . "trabajos/catalogoLibros.avif"; ?>" alt="imagen catálogo de libros">
                 </div>
                 <div class="carta__contenido">
                     <span class="carta__titulo">Catálogo de libros</span>
@@ -331,9 +331,9 @@
             </div>
 
             <div class="carta swiper-slide">
-                <div class="carta__info-icono"><i class="ri-information-line"></i></div>
+                <div class="carta__info-icono"><img src="<?php echo IMAGENES . "masinfo/info_perfil.svg"; ?>" class="info__trabajoss" alt="icono más información del trabajo" width="40" height="40"></div>
                 <div class="carta__imagen">
-                    <img src="<?php echo IMAGENES . "trabajos/clasesParticulares.jpg"; ?>" alt="imagen clases particulares">
+                    <img loading="lazy" src="<?php echo IMAGENES . "trabajos/clasesParticulares.avif"; ?>" alt="imagen clases particulares">
                 </div>
                 <div class="carta__contenido">
                     <span class="carta__titulo">Clases particulares</span>
@@ -359,9 +359,9 @@
 
 
             <div class="carta swiper-slide">
-                <div class="carta__info-icono"><i class="ri-information-line"></i></div>
+                <div class="carta__info-icono"><img src="<?php echo IMAGENES . "masinfo/info_perfil.svg"; ?>" class="info__trabajoss" alt="icono más información del trabajo" width="40" height="40"></div>
                 <div class="carta__imagen">
-                    <img src="<?php echo IMAGENES . "trabajos/elMuslito.jpg"; ?>" alt="imagen web el muslito">
+                    <img loading="lazy" src="<?php echo IMAGENES . "trabajos/elMuslito.avif"; ?>" alt="imagen web el muslito">
                 </div>
                 <div class="carta__contenido">
                     <span class="carta__titulo">El muslito</span>
@@ -392,9 +392,9 @@
             </div>
 
             <div class="carta swiper-slide">
-                <div class="carta__info-icono"><i class="ri-information-line"></i></div>
+                <div class="carta__info-icono"><img src="<?php echo IMAGENES . "masinfo/info_perfil.svg"; ?>" class="info__trabajoss" alt="icono más información del trabajo" width="40" height="40"></div>
                 <div class="carta__imagen">
-                    <img src="<?php echo IMAGENES . "trabajos/eAdministracion.jpg"; ?>" alt="imagen web administración">
+                    <img loading="lazy" src="<?php echo IMAGENES . "trabajos/eAdministracion.avif"; ?>" alt="imagen web administración">
                 </div>
                 <div class="carta__contenido">
                     <span class="carta__titulo">e-Administración</span>
@@ -422,9 +422,9 @@
 
 
             <div class="carta swiper-slide">
-                <div class="carta__info-icono"><i class="ri-information-line"></i></div>
+                <div class="carta__info-icono"><img src="<?php echo IMAGENES . "masinfo/info_perfil.svg"; ?>" class="info__trabajoss" alt="icono más información del trabajo" width="40" height="40"></div>
                 <div class="carta__imagen">
-                    <img src="<?php echo IMAGENES . "trabajos/validarArray.jpg"; ?>" alt="imagen validar array">
+                    <img loading="lazy" src="<?php echo IMAGENES . "trabajos/validarArray.avif"; ?>" alt="imagen validar array">
                 </div>
                 <div class="carta__contenido">
                     <span class="carta__titulo">Validar-Array</span>
@@ -451,9 +451,9 @@
             </div>
 
             <div class="carta swiper-slide">
-                <div class="carta__info-icono"><i class="ri-information-line"></i></div>
+                <div class="carta__info-icono"><img src="<?php echo IMAGENES . "masinfo/info_perfil.svg"; ?>" class="info__trabajoss" alt="icono más información del trabajo" width="40" height="40"></div>
                 <div class="carta__imagen">
-                    <img src="<?php echo IMAGENES . "trabajos/sql.png"; ?>" alt="imagen prácticas sql">
+                    <img loading="lazy" src="<?php echo IMAGENES . "trabajos/sql.avif"; ?>" alt="imagen prácticas sql">
                 </div>
                 <div class="carta__contenido">
                     <span class="carta__titulo">Prácticas SQL</span>
@@ -494,9 +494,9 @@
             </div>
 
             <div class="carta swiper-slide">
-                <div class="carta__info-icono"><i class="ri-information-line"></i></div>
+                <div class="carta__info-icono"><img src="<?php echo IMAGENES . "masinfo/info_perfil.svg"; ?>" class="info__trabajoss" alt="icono más información del trabajo" width="40" height="40"></div>
                 <div class="carta__imagen">
-                    <img src="<?php echo IMAGENES . "trabajos/despacho.jpg"; ?>" alt="imagen mi primera página web">
+                    <img loading="lazy" src="<?php echo IMAGENES . "trabajos/despacho.avif"; ?>" alt="imagen mi primera página web">
                 </div>
                 <div class="carta__contenido pr2">
                     <span class="carta__titulo">Mi primera página web</span>

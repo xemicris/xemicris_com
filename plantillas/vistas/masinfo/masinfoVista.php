@@ -4,7 +4,7 @@
         <div class="card">
             <div class="card__borde">
                 <div class="card__perfil">
-                    <img src="<?php echo IMAGENES . "masinfo/perfil.png"; ?>" alt="imagen perfil" class="card__imagen">
+                    <img src="<?php echo IMAGENES . "masinfo/perfil.avif"; ?>" alt="imagen perfil" width="300" height="400" class="card__imagen">
                 </div>
             </div>
             <h2 class="card__nombre">José Maria Calavia Rivera</h2>
@@ -12,12 +12,12 @@
 
             <!--Card info-->
             <div class="info">
-                <div class="info__icono"><i class="ri-information-line"></i></div>
-                <div class="info__icono-cerrar"><i class="ri-close-circle-line"></i></div>
+                <div class="info__icono"><img src="<?php echo IMAGENES . "masinfo/info_perfil.svg"; ?>" class="info_perfil" alt="icono más información del perfil" width="20" height="20"></div>
+                <div class="info__icono-cerrar"><img src="<?php echo IMAGENES . "masinfo/info_perfil_cerrar.svg"; ?>" alt="icono para cerrar más información del perfil" width="30" height="30" loading="lazy"></div>
             
                 <div class="info__borde">
                     <div class="info__perfil">
-                        <img src="<?php echo IMAGENES . "masinfo/perfil.png"; ?>" alt="imagen card" class="info__imagen">
+                        <img src="<?php echo IMAGENES . "masinfo/perfil.avif"; ?>" alt="imagen card" class="info__imagen" loading="lazy">
                     </div>
                 </div>
                 <div class="info__datos">
@@ -28,17 +28,17 @@
                 <div class="info__social">
                     <a href="https://www.linkedin.com/in/jos%C3%A9-maria-c-477685273/" target="_blank" class="info__social-link">
                         <span class="info__social-icono">
-                            <i class="ri-linkedin-box-line"></i>
+                            <img class="info__social-icono--color" src="<?php echo IMAGENES . "masinfo/linkedin.svg"; ?>" alt="icono LinkedIn" width="30" height="30" loading="lazy">
                         </span>
                     </a>
                     <a href="https://github.com/xemicris" target="_blank" class="info__social-link">
                         <span class="info__social-icono">
-                            <i class="ri-github-fill"></i>
+                            <img class="info__social-icono--color" src="<?php echo IMAGENES . "masinfo/github.svg"; ?>" alt="icono github" width="30" height="30" loading="lazy">
                         </span>
                     </a>
                     <a href="<?php echo RUTABASE . "contacto"; ?>" target="_blank" class="info__social-link">
                         <span class="info__social-icono">
-                        <i class="ri-mail-line"></i>
+                            <img class="info__social-icono--color" src="<?php echo IMAGENES . "masinfo/mail.svg"; ?>" alt="icono mail" width="30" height="30" loading="lazy">
                         </span>
                     </a>
                 </div>

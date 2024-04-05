@@ -12,7 +12,7 @@ function crearGaleria(){
     for(let i=1; i<= 10; i++){
        const imagen = document.createElement('picture');
        imagen.innerHTML=`
-            <img class="imagen_pequena" src="publico/imagenes/resumenPixeos/pequenas/${i}.png" alt="imagen galeria">
+            <img loading="lazy" class="imagen_pequena" src="publico/imagenes/resumenPixeos/pequenas/${i}.avif" alt="imagen galeria">
        `;
        imagen.addEventListener('click',function(){ 
            mostrarImagen(i)}, false);
@@ -24,7 +24,7 @@ function crearGaleria(){
 function mostrarImagen(i){
     const imagen = document.createElement('picture');
     imagen.innerHTML = `
-        <img class="imagen_grande" src="publico/imagenes/resumenPixeos/grandes/${i}.png" alt="imagen galeria">
+        <img loading="lazy" class="imagen_grande" src="publico/imagenes/resumenPixeos/grandes/${i}.avif" alt="imagen galeria">
     `;
 
     const overlay = document.createElement('DIV');

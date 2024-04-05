@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="script-src 'self'; object-src 'self'">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js; object-src 'self'">
   <meta name="theme-color" content="#FF9BE1">
   <meta name="description" content="Portafolio xemicris.com">
   <link rel="shortcut icon" href="<?php echo FAVICON . "favicon.ico"; ?>">
@@ -18,21 +18,16 @@
   <?php
   if (uriJavascript() === 'contacto') { ?>
     <!--toastr-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" crossorigin="anonymous" fetchpriority="low">
     <!--waitme-->
-    <link rel="stylesheet" href="<?php echo PLUGINS . 'waitme/waitMe.min.css' ?>">
+    <link rel="stylesheet" href="<?php echo PLUGINS . 'waitme/waitMe.min.css' ?>" crossorigin="anonymous" fetchpriority="low">
   <?php
   } else if (uriJavascript() === 'gestorProductos' || uriJavascript() === 'juegoMemoria') { ?>
     <!-- video.css -->
-    <link href="<?php echo CSS . 'video-js.min.css'; ?>" rel="stylesheet" type="text/css" fetchpriority="low">
+    <link href="<?php echo CSS . 'video-js.min.css'; ?>" rel="stylesheet" type="text/css" crossorigin="anonymous" fetchpriority="low">
   <?php } else if (uriJavascript() === 'trabajos') { ?>
-    <!--remixicons - trabajo -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" fetchpriority="low">
     <!-- slider - trabajos-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" fetchpriority="low" />
-  <?php } else if (uriJavascript() === 'masinfo') { ?>
-    <!--remixicons - perfil-->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" fetchpriority="low">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" crossorigin="anonymous" fetchpriority="low" />
   <?php } ?>
   <!--css-->
   <link async href="<?php echo CSS . 'home.css'; ?>" rel="stylesheet preload prefetch" as="style" type="text/css" fetchpriority="low" media="screen">
@@ -57,7 +52,7 @@
       </ul>
       <a href="<?php echo RUTABASE . "resumenPixeos"; ?>" class="boton">Pixeos</a>
       <div class="boton_movil">
-        <img src="<?php echo IMAGENES . "home/menu_cerrado.svg"; ?>" alt="menu cerrado" class="menu_cerrado" width="35" height="35">
+        <img src="<?php echo IMAGENES . "home/menu_cerrado.svg"; ?>" alt="menu cerrado" class="menu_cerrado" width="35" height="35" loading="lazy">
       </div>
       <img src="<?php echo IMAGENES . "home/menu_abierto.svg"; ?>" alt="menu abierto" class="menu_abierto menu_uso" width="45" height="45" loading="lazy">
     </div>

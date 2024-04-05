@@ -117,6 +117,10 @@ header {
     -webkit-filter: invert(1);
     cursor:pointer;
 }
+.menu_abierto{
+    position: absolute;
+    right:.7rem;
+}
 .menu_uso{
     display: none;
 }
@@ -405,7 +409,7 @@ img {
 }
 .info__icono {
     position:absolute;
-    top:.5rem;
+    top:.7rem;
     right:1rem;
     font-size:1.5rem;
     color:#fff;
@@ -414,11 +418,16 @@ img {
     cursor:pointer;
     transition:opacity .3s
 }
+.info_perfil{
+    width: 1.5rem;
+    filter: invert(1);
+    -webkit-filter: invert(1);
+}
 .info__icono-cerrar {
     position:absolute;
-    top:.5rem;
+    top:.7rem;
     right:1rem;
-    font-size:1.5rem;
+    width: 2rem;
     color:#000;
     display:inline-flex;
     padding:.25rem;
@@ -487,8 +496,11 @@ img {
     background:var(--gradient-color);
     padding:.25rem;
     border-radius:50%;
-    color:var(--white-color);
-    font-size:1rem
+    width: 2.3rem;
+}
+.info__social-icono--color{
+    filter: invert(1);
+    -webkit-filter: invert(1);
 }
 .info__social-link:hover {
     transform:translateY(-.25rem)
@@ -708,6 +720,11 @@ html {
 }
 .practicas__video {
     box-shadow:0 0 6px 0 rgba(0,0,0,.5)
+}
+.info__trabajoss{
+    width: 1.5rem;
+    position: relative;
+    top:.5rem;
 }
 .vjs-control-bar {
     background:#F4F4F4;
