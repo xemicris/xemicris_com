@@ -1,8 +1,10 @@
 
 const ojo = document.querySelector(".ojo__contrasena");
 const password = document.querySelector(".contrasena");
+const formulario = document.querySelector("#formulario")
 
 ojo.addEventListener('click', mostrarOcultarContrasena);
+formulario.addEventListener('submit', validar);
 
 
 function mostrarOcultarContrasena(){
@@ -19,10 +21,10 @@ function mostrarOcultarContrasena(){
     }
 }
 
-
 /*función que devuelve true si los datos introducidos 
 en los campos son correctos y false en otro caso*/
-function validar(){
+function validar(e){
+    e.preventDefault();
     /*en estas variables almaceno un valor booleano true o false
     proviniente de las funciones de validación*/
     var nombre = validarNombre();
@@ -154,7 +156,8 @@ function ventana(){
         height=${height}
         top=${y}
         left=${x}
-        Menubar=yes`
+        Menubar=yes
+        status=yes`
     );
 }
 
