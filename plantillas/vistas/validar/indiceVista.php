@@ -43,7 +43,7 @@
                 <!-- campo contraseña -->
                 <div id="dcon">
                     <label for="contra" id="etiqueta1">Contraseña</label>
-                    <input class="contrasena" type="password" id="contra">
+                    <input class="contrasena" type="password" id="contra" autocomplete="on">
                     <img class="input__icono  ojo__contrasena" src="<?php echo IMAGENES . "validar/ojo-tachado.svg"; ?>" alt="icono ojo tachado">
                 </div>
                 <input type="submit" value="Enviar" id="envia">
@@ -58,7 +58,7 @@
             <p class="instrucciones">usuario: letras en minúscula y entre 3 y 12 caracteres</p>
             <p class="instrucciones ultimo">contraseña: 1 letra mayúscula + (./,/-) + 6 números y/o letras(minúsucula)</p>
         </div>
-        <script src="<?php echo JS . "validar-input.js"; ?>" language="javascript" type="text/javascript"></script>
+        <script type="module" src="<?php echo JS . "validar-input.js"; ?>" language="javascript" type="text/javascript"></script>
     </footer>
 </body>
 

@@ -152,54 +152,6 @@ function uriJavascript(){
   }
 }
 
-/*FUNCION POSAY*/
-function validarPosay($dato1, $dato2){
-  //Variables
-  $alertas = [];
-  $expresionDato1 = "/^([a-zA-Záéíóú1-9]+)(\s[a-zA-Záéíóú1-9]+)*$/";
-  $expresionDato2 =  "/^[^$%&|<>#]*$/";
-
-  if(empty($dato1)){
-      array_push($alertas, "Dato1 requerido");
-  }else if(!preg_match($expresionDato1, $dato1)){
-      array_push($alertas, "Dato no válido");
-  }
-
-  if(empty($dato2)){
-      array_push($alertas, "Dato2 requerido");
-  }else if(!preg_match($expresionDato2, $dato2)){
-      array_push($alertas, "Dato2 no válido");
-  }
-  return $alertas;
-}
-
-function getUserIP()
-{
-    // Get real visitor IP behind CloudFlare network
-    if (isset($_SERVER["HTTP_CF_CONNECTING_IP"])) {
-              $_SERVER['REMOTE_ADDR'] = $_SERVER["HTTP_CF_CONNECTING_IP"];
-              $_SERVER['HTTP_CLIENT_IP'] = $_SERVER["HTTP_CF_CONNECTING_IP"];
-    }
-    $client  = @$_SERVER['HTTP_CLIENT_IP'];
-    $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
-    $remote  = $_SERVER['REMOTE_ADDR'];
-
-    if(filter_var($client, FILTER_VALIDATE_IP))
-    {
-        $ip = $client;
-    }
-    elseif(filter_var($forward, FILTER_VALIDATE_IP))
-    {
-        $ip = $forward;
-    }
-    else
-    {
-        $ip = $remote;
-    }
-
-    return $ip;
-}
-
 function getRemoteFile($url, $timeout = 10) {
   $ch = curl_init();
   curl_setopt ($ch, CURLOPT_URL, $url);

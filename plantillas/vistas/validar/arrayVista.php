@@ -13,10 +13,9 @@
     <body>
         <div id="campos">
             <input type="text" id="entrada" placeholder="Números enteros">
-            <button type="button" id="guarda" onclick="guardarArray();">Guardar</button>
-            <button type="button" style="display:none;" id="reinicio" 
-            onclick="reiniciar();">Reiniciar</button>
-            <button type="button" id="muestra" onclick="mostrar();">Mostrar</button>
+            <button type="button" id="guarda">Guardar</button>
+            <button type="button" style="display:none;" id="reinicio">Reiniciar</button>
+            <button type="button" id="muestra">Mostrar</button>
             <label for="arr">Números introducidos</label>
             <input type="text" id="arr">
             <label for="ordenados">Números ordenados</label>

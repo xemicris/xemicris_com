@@ -1,4 +1,5 @@
 
+import { getProjectRoute } from "./getProjectRoute.js";
 const ojo = document.querySelector(".ojo__contrasena");
 const password = document.querySelector(".contrasena");
 const formulario = document.querySelector("#formulario")
@@ -150,7 +151,9 @@ function ventana(){
     // inicializamos un función de apertura de la ventana
     // No es necesario realizar más cálculos
     // Basta con incluir las variables donde corresponde
-    window.open('https://xemicris.com/validar/array', 'Validación correcta',
+    const url = getProjectRoute();
+    const servidor = (url === 'http://dominio.prueba.com/xemicris_com') ? 'http://dominio.prueba.com/xemicris_com/validar/array' : 'https://xemicris.com/validar/array'
+    window.open(servidor, 'Validación correcta',
         `scrollbars=yes
         width=${width}
         height=${height}
@@ -160,6 +163,5 @@ function ventana(){
         status=yes`
     );
 }
-
 
 
