@@ -51,12 +51,12 @@
                 (FOC), el cual terminé a finales de 2022.
             </p>
             <p>
-                Unos los podrás visualizar y/o descargar a través de videos que he grabado, ya que no se hicieron pensados en implementarse
+                Unos los podrás visualizar y/o descargar a través de videos que he grabado, ya que no se hicieron pensados para implementarse
                 en un entorno web, mientras que otros los desplegaré para que puedas probarlos. Quiero destacar 
                 <strong>Pixeos</strong>, el proyecto web en el que estoy trabajando actualmente.
             </p>
             <p>
-                Tecnologías y herramientas con las que he trabajado: Java, HTML5, CSS, JavaScript, PHP, MySQL, 
+                Tecnologías y herramientas con las que he trabajado: Java, HTML5, CSS, JavaScript, PHP, MySQL, WordPress, 
                 Spring Boot (prácticas en empresa), Apache Web Sever, Apache Tomcat, Git, Composer, Vite, React, Jest, 
                 React Testing Library 
             </p>

@@ -56,7 +56,7 @@
                                 <div class="mb-3">
                                     <h6><b>Título:</b> <span id="tituloMostrar"></span></h6>
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-3 contenedor-descripcionTarea">
                                     <p><b class="descripcionTarea">Descripción:</b> <span id="descripcionMostrar"></span></p>
                                 </div>
                                 <div class="mb-3">

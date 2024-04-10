@@ -6,6 +6,41 @@
             <div class="carta swiper-slide">
                 <div class="carta__info-icono"><img src="<?php echo IMAGENES . "masinfo/info_perfil.svg"; ?>" class="info__trabajoss" alt="icono más información del trabajo" width="40" height="40"></div>
                 <div class="carta__imagen">
+                    <img loading="lazy" src="<?php echo IMAGENES . "trabajos/wordpress.avif"; ?>" alt="imagen del logo de Wordpress">
+                </div>
+                <div class="carta__contenido">
+                    <span class="carta__titulo">Página de pruebas de Wordpress</span>
+                    <p class="carta__texto">
+                        Página de Wordpress para practicar y realizar pruebas tanto del propio CMS como de distintos plugins y temas. Instalada y
+                        configurada manualmente.
+                    </p>
+                </div>
+                <a href="<?php echo "woba"; ?>" class="carta__boton carta__boton-fondo">
+                    <span class="carta__boton-texto">Acceder</span>
+                </a>
+                <div class="carta__contenido-info">
+                    <p>A destacar del proyecto:</p>
+                    <div class="carta__texto-info">
+                        <ul class="carta__texto-info-lista">
+                            <li class="carta__texto-info-lista-li">WordPress</li>
+                            <li class="carta__texto-info-lista-li">Crear páginas</li>
+                            <li class="carta__texto-info-lista-li">Crear entradas</li>
+                            <li class="carta__texto-info-lista-li">Biblioteca</li>
+                            <li class="carta__texto-info-lista-li">Temas</li>
+                            <li class="carta__texto-info-lista-li">Editor Gutenberg</li>
+                            <li class="carta__texto-info-lista-li">Advanced Google reCAPTCHA</li>
+                            <li class="carta__texto-info-lista-li">Akismet Anti-spam</li>
+                            <li class="carta__texto-info-lista-li">All-in-One WP Migration</li>
+                            <li class="carta__texto-info-lista-li">Security Optimizer</li>
+                            <li class="carta__texto-info-lista-li">WP Fastest Cache</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carta swiper-slide">
+                <div class="carta__info-icono"><img src="<?php echo IMAGENES . "masinfo/info_perfil.svg"; ?>" class="info__trabajoss" alt="icono más información del trabajo" width="40" height="40"></div>
+                <div class="carta__imagen">
                     <img loading="lazy" src="<?php echo IMAGENES . "trabajos/buscagif.avif"; ?>" alt="imagen app ingresos y gastos">
                 </div>
                 <div class="carta__contenido">
