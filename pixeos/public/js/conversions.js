@@ -1,8 +1,1 @@
-export function convertirFechaEspanol(string) {
-    var info = string.split('-').reverse().join('/');
-    return info;
-}
-export function convertirFechaIngles(string) {
-    var info = string.split('/').reverse().join('-');
-    return info;
-}
+export function convertirFechaEspanol(e){return e.split("-").reverse().join("/")}export function convertirFechaIngles(e){return e.split("/").reverse().join("-")}

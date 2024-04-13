@@ -1,5 +1,1 @@
-var pathname = window.location.pathname;
-var altura = document.querySelector('.navbar-nav');
-if(pathname.substring(14,19) == 'panel'){
-    altura.style.marginTop= 0 + 'px';
-}
+var pathname=window.location.pathname,altura=document.querySelector(".navbar-nav");"panel"==pathname.substring(14,19)&&(altura.style.marginTop="0px");
