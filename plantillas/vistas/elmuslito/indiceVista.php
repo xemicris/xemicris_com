@@ -2,6 +2,9 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self'; object-src 'self'">
+        <meta name="description" content="Blog para la elaboración y divulgación de recetas de cocina">
+        <link rel="shortcut icon" href="<?php echo FAVICON . "favicon.ico"; ?>">
         <title><?php echo $datos['titulo']; ?></title>
         <!-- etiqueta que vincula el documento HTML con la hoja de estilos CSS -->
         <link rel="stylesheet" type="text/css" href="<?php echo CSS . 'elmuslito.css'; ?>">
@@ -9,26 +12,26 @@
     <body>
         <!-- Cabecera con: logo, título y gif -->
         <header id="cabecera">
-            <img src="<?php echo IMAGENES . 'elmuslito/logo_final.jpg'; ?>" alt="logo" id="logo">
+            <img src="<?php echo IMAGENES . 'elmuslito/logo_final.avif'; ?>" alt="logo" id="logo" width="300" height="198">
             <div class="contenedor__titulo">
                 <h1><a class="titulo" href="<?php echo RUTABASE . 'elmuslito'; ?>">El muslito</a></h1>
             </div>
-            <img src="<?php echo IMAGENES . 'elmuslito/animacion.gif'; ?>" id="gif">
+            <img src="<?php echo IMAGENES . 'elmuslito/animacion.gif'; ?>" id="gif" alt="logo con forma de pollo humeante">
         </header>
             <!-- menú de navegación lateral (formado por una lista desordenada)-->
             <nav class="barra">
                <div class="casa__contenedor">
-                    <a href="<?php echo RUTABASE . "trabajos"; ?>">
+                    <a href="<?php echo RUTABASE . "trabajos"; ?>" aria-label="volver a xemicris">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="casa w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                         </svg>
                     </a>
                 </div>
                 <ul>
-                    <li><a href="#">Recetas</a></li>
-                    <li><a href="#">Reservas</a></li>
-                    <li><a href="#">Horario</a></li>
-                    <li><a href="<?php echo RUTABASE . 'trabajos'; ?>">Volver</a></li>
+                    <li><a href="#"  aria-label="Índice de las recetas">Recetas</a></li>
+                    <li><a href="#"  aria-label="página de reservas">Reservas</a></li>
+                    <li><a href="#"  aria-label="horario de emisión de nuevos videos de recetas">Horario</a></li>
+                    <li><a href="<?php echo RUTABASE . 'trabajos'; ?>"  aria-label="volver a xemicris">Volver</a></li>
                 </ul>
             </nav>
             <!-- parte central de la web -->
@@ -51,10 +54,10 @@
                     <!-- etiqueta que hace la imágen responsive. Va reduciendo el tamaño de la imagen en función 
                     de la resolución de la pantalla -->
                     <picture>
-                        <source media="(max-width: 964px)" srcset="<?php echo IMAGENES . 'elmuslito/pollo_300px.jpg'; ?>">
-                        <source media="(max-width: 1110px)" srcset="<?php echo IMAGENES . 'elmuslito/pollo_400px.jpg'; ?>">
-                        <source media="(max-width: 1396px)" srcset="<?php echo IMAGENES . 'elmuslito/pollo_500px.jpg'; ?>">
-                        <img src="<?php echo IMAGENES . 'elmuslito/pollo_original.jpg'; ?>" alt="pollo" id="pollo">
+                        <source media="(max-width: 964px)" srcset="<?php echo IMAGENES . 'elmuslito/pollo_300px.avif'; ?>" width="300" height="224">
+                        <source media="(max-width: 1110px)" srcset="<?php echo IMAGENES . 'elmuslito/pollo_400px.avif'; ?>" width="400" height="299">
+                        <source media="(max-width: 1396px)" srcset="<?php echo IMAGENES . 'elmuslito/pollo_500px.avif'; ?>" width="500" height="374">
+                        <img src="<?php echo IMAGENES . 'elmuslito/pollo_original.avif'; ?>" alt="pollo" id="pollo" width="640" height="479">
                     </picture>
                  <!-- apartado elaboración -->
                 </section>
@@ -84,9 +87,7 @@
         <footer>
             <p id="autor">P&aacute;gina elaborada por: Jos&eacute; Maria Calavia Rivera</p>
             <div id="a_img">Autor imagen pollo al Chilindr&oacute;n: Jorgehdezalonso Licencia: CC
-                            Procedencia: <a 
-                            href="https://commons.wikimedia.org/wiki/File:Pollo_al_chilindr%C3%B3n_aragones._Chef_Koketo.jpg" 
-                            target="blank">aquí</a></div>
+                            Procedencia: <a href="https://commons.wikimedia.org/wiki/File:Pollo_al_chilindr%C3%B3n_aragones._Chef_Koketo.avif" target="blank" >Fuente imagen</a></div>
         </footer>
     </div>
     </body>
