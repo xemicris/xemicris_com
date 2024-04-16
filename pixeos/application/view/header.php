@@ -32,15 +32,11 @@
                 <button id="biz" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBarraLateral" aria-controls="offcanvasBarraLateral">
                     <span id="boton-izquierdo" class="navbar-toggler-icon"></span>
                 </button>
-
                 <a class="contenedor-logo color-logo navbar-brand fw-bold " href="<?php echo RUTA . 'panel/panel' ?>">
-
                 </a>
-
                 <button id="dde" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span id="boton-derecho" class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="menu-superior collapse navbar-collapse d-lg-flex justify-content-between" id="navbarSupportedContent">
                     <div class="logo-superior-contenedor mt-3">
                         <p id="logo-superior" class="navbar-brand fw-bold">¡Hola de nuevo <?php echo $datos['usuario']['nombre'] ?>!</p>
@@ -50,11 +46,10 @@
                             <li class="nav-item dropdown">
                                 <a id="flecha-desplegable" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <?php if (isset($datos['usuario']['imagen']) && !empty($datos['usuario']['imagen'])) { ?>
-                                        <img class="perfil-pequeno" src="<?php echo RUTA . "images/" . $datos['usuario']['imagen'] ?>">
+                                        <img class="perfil-pequeno" src="<?php echo RUTA . "images/" . $datos['usuario']['imagen'] ?>" width="55" height="55">
                                     <?php } else { ?>
                                         <i class="bi bi-person fs-2"></i>
                                     <?php } ?>
-
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end">
                                     <li><a class="dropdown-item" href="<?php echo RUTA . 'panel/profile' ?>">Perfil</a></li>
@@ -131,7 +126,6 @@
                                         <span>Calendario</span>
                                     </a>
                                 </li>
-
                             <?php }
                             if ($url != 'contact') { ?>
                                 <li class="barra-color">
@@ -143,7 +137,7 @@
                             <?php } ?>
                             <li class="barra-color">
                                 <a href="<?php echo XEMICRIS . 'resumenPixeos'; ?>" class="cambio-color nav-link px-3 active mb-3">
-                                    <span class="me-1"><img id="iconoXemicris" src="<?php echo RUTA . 'public/images/xemicris.svg'; ?>" alt="Icono para ir a xemicris"></span>
+                                    <span class="me-1"><img id="iconoXemicris" src="<?php echo RUTA . 'public/images/xemicris.svg'; ?>" alt="Icono para ir a xemicris" height="20" width="20"></span>
                                     <span>Ir a xemicris</span>
                                 </a>
                             </li>
@@ -159,7 +153,7 @@
             <div class="container-fluid">
 
                 <a class="color-logo navbar-brand fw-bold " href="<?php echo RUTA . 'admin/admin' ?>">
-                    <img id="logo" src="<?php echo RUTA ?>public/images/logo-oscuro.avif" alt="logo">
+                    <img id="logo" src="<?php echo RUTA ?>public/images/logo-oscuro.avif" alt="logo" width="200" height="40">
                 </a>
                 <button id="dde" class="navbar-toggler bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span id="boton-derecho" class="navbar-toggler-icon navbar-dark"></span>

@@ -9,7 +9,7 @@
                     <img loading="lazy" src="<?php echo IMAGENES . "trabajos/wordpress.avif"; ?>" alt="imagen del logo de Wordpress">
                 </div>
                 <div class="carta__contenido">
-                    <span class="carta__titulo">Página de pruebas de Wordpress</span>
+                    <span class="carta__titulo">Woba</span>
                     <p class="carta__texto">
                         Página de Wordpress para practicar y realizar pruebas tanto del propio CMS como de distintos plugins y temas. Instalada y
                         configurada manualmente.
@@ -22,17 +22,21 @@
                     <p>A destacar del proyecto:</p>
                     <div class="carta__texto-info">
                         <ul class="carta__texto-info-lista">
-                            <li class="carta__texto-info-lista-li">WordPress</li>
-                            <li class="carta__texto-info-lista-li">Crear páginas</li>
-                            <li class="carta__texto-info-lista-li">Crear entradas</li>
-                            <li class="carta__texto-info-lista-li">Biblioteca</li>
-                            <li class="carta__texto-info-lista-li">Temas</li>
-                            <li class="carta__texto-info-lista-li">Editor Gutenberg</li>
-                            <li class="carta__texto-info-lista-li">Advanced Google reCAPTCHA</li>
-                            <li class="carta__texto-info-lista-li">Akismet Anti-spam</li>
-                            <li class="carta__texto-info-lista-li">All-in-One WP Migration</li>
-                            <li class="carta__texto-info-lista-li">Security Optimizer</li>
-                            <li class="carta__texto-info-lista-li">WP Fastest Cache</li>
+                            <li class="carta__texto-info-lista-li">Crear, editar páginas y entradas (Gutenberg)</li>
+                            <li class="carta__texto-info-lista-li">Medios y biblioteca</li>
+                            <li class="carta__texto-info-lista-li">Temas (Instalación, activación, modificación)</li>
+                            <li class="carta__texto-info-lista-li">Plugins:
+                                <ol>
+                                    <li class="carta__texto-info-lista-li2 plugins">Advanced Google reCAPTCHA</li>
+                                    <li class="carta__texto-info-lista-li2 plugins">All-in-One WP Migration</li>
+                                    <li class="carta__texto-info-lista-li2 plugins">Akismet Anti-spam</li>
+                                    <li class="carta__texto-info-lista-li2 plugins">WP Fastest Cache</li>
+                                    <li class="carta__texto-info-lista-li2 plugins">Security Optimizer</li>
+                                    <li class="carta__texto-info-lista-li2 plugins">Child Theme Configurator</li>
+                                </ol>
+                            </li>
+                            
+                            
                         </ul>
                     </div>
                 </div>
