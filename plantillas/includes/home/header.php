@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" crossorigin="anonymous" fetchpriority="low" />
   <?php } ?>
   <!--css-->
-  <link async href="<?php echo CSS . 'home.css'; ?>" rel="stylesheet preload prefetch" as="style" type="text/css" fetchpriority="low" media="screen">
+  <link async href="<?php echo CSS . 'home.css'; ?>" rel="stylesheet" type="text/css" fetchpriority="low">
   <!--FIN ENLACES-->
 </head>
 

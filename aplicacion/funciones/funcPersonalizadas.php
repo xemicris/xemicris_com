@@ -9,7 +9,7 @@ function obtenerMonedas()
 function captcha()
 {
   $data = array(
-    'secret' => "",
+    'secret' => "0xfE61fAE027b3b749A09d93B5049f4585DB23f2A8",
     'response' => $_POST['h-captcha-response']
   );
   $verify = curl_init();
@@ -43,44 +43,49 @@ function obtenerContenidoCurl($url)
   return $data;
 }
 
-function obtenerUri()
-{
-  if (isset($_GET["uri"])) {
-    /*eliminamos las diagonales (algunos navegadores usan diagonal
-      invertida)*/
-    $url = rtrim($_GET["uri"], "/");
-    $url = rtrim($_GET["uri"], "\\");
+function obtenerUri(){
+  if (!isset($_GET["uri"])) {
+    return null;
+  }
+  /*eliminamos las diagonales (algunos navegadores usan diagonal
+  invertida)*/
+  $url = rtrim($_GET["uri"], "/");
+  $url = rtrim($_GET["uri"], "\\");
 
+  //Limpiar caracteres no permitidos en una URL
+  $url = filter_var($url, FILTER_SANITIZE_URL);
 
+  //Divide un string en varios dentro de un array (separador, string)
+  $url = explode("/", $url);
 
-    //Limpiar caracteres no permitidos en una URL
-    $url = filter_var($url, FILTER_SANITIZE_URL);
+  return $url;
+}
 
-    //Divide un string en varios dentro de un array (separador, string)
-    $url = explode("/", $url);
-
-    if (isset($url[1])) {
-      if ($url[1] == "autores") {
+  function buscadorBiblioteca(){
+      $input = false;
+      $pantalla = obtenerUri();
+      if($pantalla !== null && !isset($pantalla[1])){
         $input = '<div class="buscador">
+                    <form id="formularioLibros" method="POST" action="#">
+                      <label for="texto">Titulo</label>
+                      <input type="text" id="texto" class="mostrar_sugerencias_libros"><br>
+                    </form>
+                  </div>
+        ';
+      }
+      if($pantalla !== null && isset($pantalla[1]) && $pantalla[1] === "autores"){
+          $input = '<div class="buscador">
                       <form id="formularioAutores" method="POST" action="#">
+                        <label for="texto">Autor</label>
                         <input type="text" id="texto" class="mostrar_sugerencias_autores"><br>
                       </form>
                     </div>
                     ';
-      } else {
-        $input = false;
+       
       }
-    } else {
-      $input = '<div class="buscador">
-                    <form id="formularioLibros" method="POST" action="#">
-                      <input type="text" id="texto" class="mostrar_sugerencias_libros"><br>
-                    </form>
-                  </div>
-                  ';
-    }
-    return $input;
+      return $input;
   }
-}
+
 
 /**
  * Retorna el resultado de comparar una expresión regular con una cadena
@@ -152,6 +157,54 @@ function uriJavascript(){
   }
 }
 
+/*FUNCION POSAY*/
+function validarPosay($dato1, $dato2){
+  //Variables
+  $alertas = [];
+  $expresionDato1 = "/^([a-zA-Záéíóú1-9]+)(\s[a-zA-Záéíóú1-9]+)*$/";
+  $expresionDato2 =  "/^[^$%&|<>#]*$/";
+
+  if(empty($dato1)){
+      array_push($alertas, "Dato1 requerido");
+  }else if(!preg_match($expresionDato1, $dato1)){
+      array_push($alertas, "Dato no válido");
+  }
+
+  if(empty($dato2)){
+      array_push($alertas, "Dato2 requerido");
+  }else if(!preg_match($expresionDato2, $dato2)){
+      array_push($alertas, "Dato2 no válido");
+  }
+  return $alertas;
+}
+
+function getUserIP()
+{
+    // Get real visitor IP behind CloudFlare network
+    if (isset($_SERVER["HTTP_CF_CONNECTING_IP"])) {
+              $_SERVER['REMOTE_ADDR'] = $_SERVER["HTTP_CF_CONNECTING_IP"];
+              $_SERVER['HTTP_CLIENT_IP'] = $_SERVER["HTTP_CF_CONNECTING_IP"];
+    }
+    $client  = @$_SERVER['HTTP_CLIENT_IP'];
+    $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
+    $remote  = $_SERVER['REMOTE_ADDR'];
+
+    if(filter_var($client, FILTER_VALIDATE_IP))
+    {
+        $ip = $client;
+    }
+    elseif(filter_var($forward, FILTER_VALIDATE_IP))
+    {
+        $ip = $forward;
+    }
+    else
+    {
+        $ip = $remote;
+    }
+
+    return $ip;
+}
+
 function getRemoteFile($url, $timeout = 10) {
   $ch = curl_init();
   curl_setopt ($ch, CURLOPT_URL, $url);
@@ -160,6 +213,35 @@ function getRemoteFile($url, $timeout = 10) {
   $file_contents = curl_exec($ch);
   curl_close($ch);
   return ($file_contents) ? $file_contents : FALSE;
+}
+
+//Obtiene la info de la IP del cliente desde geoplugin
+
+function ip_info($ip = NULL) {
+  $ip_datos = json_decode(getRemoteFile(
+      "http://www.geoplugin.net/json.gp?ip=" . $ip));
+  return $ip_datos->geoplugin_city;
+}
+
+date_default_timezone_set('Europe/Madrid');
+
+//función que escribe los datos del cliente en un archivo de texto    
+function write_visita (){
+
+  //Indicar ruta de archivo válida
+  $archivo= APP . "visitas.txt";
+
+  $new_ip=getUserIP();
+  $fechaSinCorregir = new DateTime();
+  setlocale(LC_ALL,"es_ES");
+  $fechaCorregida = $fechaSinCorregir->format('d-m-Y, H:i:s');
+  
+
+  $txt =  str_pad($new_ip,25). " ".
+          str_pad($fechaCorregida,25)." ".
+          str_pad("Ciudad: " . ip_info($new_ip),25);
+
+  $myfile = file_put_contents($archivo, $txt.PHP_EOL , FILE_APPEND);
 }
 
 
