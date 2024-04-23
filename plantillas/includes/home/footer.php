@@ -16,7 +16,7 @@
         <script defer src='<?php echo JS . 'contacta.js'  ?>'></script> 
 <?php 
     }else if(uriJavascript() === 'gestorProductos' || uriJavascript() === 'juegoMemoria'){?>
-        <script src="<?php echo JS . 'video.min.js'  ?>"></script>
+        <script defer src="<?php echo JS . 'video.min.js'  ?>"></script>
 <?php } ?>
 
 </body>
