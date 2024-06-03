@@ -2,13 +2,13 @@
 <body>
     <div class="container-xl">
         <div class="py-4 py-lg-5 text-center">
-            <h2 class="logo">Libreta de ingresos y gastos</h2>
+            <h1 class="logo">Libreta de ingresos y gastos</h1>
             <p class="text-muted">LLeva un control de tus ingresos y gastos</p>
         </div>
         <!--opciones-->
         <div class="row">
             <div class="contenedor_casa">
-                <a href="<?php echo RUTABASE . "trabajos"; ?>">
+                <a href="<?php echo RUTABASE . "trabajos"; ?>" aria-label="volver a xemicris">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="casa w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                     </svg>
@@ -16,7 +16,7 @@
             </div>
             <div class="col-xl-8">
                 <div class="card mb-3 curved curved-hz-2">
-                    <div class="card-header text-center"><h5 class="titulos">Opciones de visualización de los movimientos</h5></div>
+                    <div class="card-header text-center"><h2 class="titulos">Opciones de visualización de los movimientos</h2></div>
                     <div class="card-body">
                         <form id="opciones">
                             <div class="form-group row">
@@ -62,11 +62,11 @@
             </div>
             <div class="col-xl-4">
                 <div class="card mb-3">
-                    <div class="card-header text-center"><h5 class="titulos">Seleccionar Fecha</h5></div>
+                    <div class="card-header text-center"><h2 class="titulos">Seleccionar Fecha</h2></div>
                     <div class="card-body d-flex flex-column justify-content-center">
-                        <label class="subtitulos" for="calcularImpuestos">Fecha</label>
+                        <label class="subtitulos" for="calendario">Fecha</label>
                         <div class="fecha">
-                            <input type="date"  class="entradas form-control" id="calendario" name="calendario">
+                            <input type="date" class="entradas form-control" id="calendario" name="calendario">
                         </div>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
             <div class="col-xl-8">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="titulos tituloForm text-center">Agregar nuevo movimiento</h5>
+                        <h2 class="titulos tituloForm text-center">Agregar nuevo movimiento</h2>
                     </div>
                     <div class="card-body">
                         <form class="agregarMovimiento" novalidate>
@@ -100,7 +100,7 @@
                                     <div class="invalid-feedback">Ingresa una descripción</div>
                                 </div>
                                 <div class="col-xl-4 mb-3">
-                                <label class="centrarSubtitulos subtitulos w-100" for="Cantidad">Cantidad</label>
+                                <label class="centrarSubtitulos subtitulos w-100" for="cantidad">Cantidad</label>
                                 <div class="input-group">
                                     <span class=" tipoMoneda input-group-text"><?php echo obtenerOpcion('moneda'); ?></span>
                                     <input type="text" class="form-control entradas" id="cantidad" name="cantidad" placeholder="Max: 10 números"
@@ -123,7 +123,6 @@
                     </div>
                 </div>
             </div>
-
             <!--lista de movimientos-->
             <div class="col-xl-4">
                 <div class="movimientos">

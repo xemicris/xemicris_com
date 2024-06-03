@@ -2,30 +2,49 @@ document.addEventListener('DOMContentLoaded', function(){
     iniciarGaleria();
 });
 
-
-function iniciarGaleria(){
-    crearGaleria();
+function tipoProyecto(){
+    const separador = '/';
+    const buscar = 'resumenPixeos';
+    let proyecto = window.location.pathname.split(separador);
+    return proyecto.includes(buscar);
 }
 
-function crearGaleria(){
+function iniciarGaleria(){
+    let proyecto = tipoProyecto();
+    crearGaleria(proyecto);
+}
+
+function crearGaleria(proyecto){
     const galeria = document.querySelector('.galeria-imagenes');
     for(let i=1; i<= 10; i++){
        const imagen = document.createElement('picture');
-       imagen.innerHTML=`
-            <img loading="lazy" class="imagen_pequena" src="publico/imagenes/resumenPixeos/pequenas/${i}.avif" alt="imagen galeria">
-       `;
+       if(proyecto){
+           imagen.innerHTML=`
+                <img loading="lazy" class="imagen_pequena" src="publico/imagenes/resumenPixeos/pequenas/${i}.avif" alt="imagen galeria">
+           `;
+       }else{
+        imagen.innerHTML=`
+                <img loading="lazy" class="imagen_pequena" src="publico/imagenes/colaboraciones/pequenas/${i}.avif" alt="imagen galeria">
+           `;
+       }
        imagen.addEventListener('click',function(){ 
-           mostrarImagen(i)}, false);
+           mostrarImagen(i, proyecto)}, false);
 
        galeria.appendChild(imagen);
     }
 }
 
-function mostrarImagen(i){
+function mostrarImagen(i, proyecto){
     const imagen = document.createElement('picture');
-    imagen.innerHTML = `
-        <img loading="lazy" class="imagen_grande" src="publico/imagenes/resumenPixeos/grandes/${i}.avif" alt="imagen galeria">
-    `;
+    if(proyecto){
+        imagen.innerHTML = `
+            <img loading="lazy" class="imagen_grande" src="publico/imagenes/resumenPixeos/grandes/${i}.avif" alt="imagen galeria">
+        `;
+    }else{
+        imagen.innerHTML = `
+            <img loading="lazy" class="imagen_grande" src="publico/imagenes/colaboraciones/grandes/${i}.avif" alt="imagen galeria">
+        `;
+    }
 
     const overlay = document.createElement('DIV');
     overlay.appendChild(imagen);

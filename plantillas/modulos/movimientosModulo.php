@@ -1,9 +1,9 @@
-<h4 class="d-flex justify-content-center align-items-center mt-3 mt-lg-0 mb-3 gap-3">
+<h2 class="d-flex justify-content-center align-items-center mt-3 mt-lg-0 mb-3 gap-3">
     <div class="mb-1">
     <span class="titulos text-muted">Movimientos</span>
     </div>
     <span class="badge bg-warning text-dark rounded-pill"><?php echo isset($datos['cal']['totalMovimientos']) ? $datos['cal']['totalMovimientos'] : ''; ?></span>
-</h4>
+</h2>
 <ul class="list-group mb-3">
     <?php if($datos && isset($datos['movimientos']) && $datos['movimientos'] != false):?>
         <?php foreach ($datos['movimientos'] as $movimiento): ?>
@@ -12,7 +12,7 @@
                     data-id="<?php echo $movimiento['id']; ?>"
             >
                 <div class="<?php echo $movimiento['tipo'] === 'ingresos' ? 'text-success' : 'text-danger'; ?>">
-                    <h6 class="my-0 titulos"><?php echo $movimiento['tipo'] === 'ingresos' ? 'Ingreso' : 'Gasto'; ?></h6>
+                    <h3 class="my-0 titulos"><?php echo $movimiento['tipo'] === 'ingresos' ? 'Ingreso' : 'Gasto'; ?></h3>
                     <small class="text-muted subtitulos"><?php echo $movimiento['descripcion']; ?></small>
                 </div>
                 <div class="d-flex align-items-center justify-content-start w-25">
